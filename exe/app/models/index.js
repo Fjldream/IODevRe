@@ -1,1 +1,5 @@
-module.exports = { Device: require('./Device'), DeviceGroup: require('./DeviceGroup'), Variable: require('./Variable'), VariableGroup: require('./VariableGroup') };
+module.exports = {
+  Device: require('./Device'), DeviceGroup: require('./DeviceGroup'),
+  Variable: require('./Variable'), VariableGroup: require('./VariableGroup'),
+  Driver: require('./Driver'),
+};

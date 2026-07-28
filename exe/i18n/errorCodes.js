@@ -40,7 +40,7 @@ const ErrorCodes = {
   DRIVER_NOT_FOUND:           { code: 3000, key: 'driverNotFound' },
   DRIVER_INSTALL_FAILED:      { code: 3001, key: 'driverInstallFailed' },
   DRIVER_UNINSTALL_FAILED:    { code: 3002, key: 'driverUninstallFailed' },
-  DRIVER_CONFIG_INVALID:      { code: 3003, key: 'driverConfigInvalid' },
+  DRIVER_ALREADY_EXISTS:      { code: 3004, key: 'driverAlreadyExists' },
   DRIVER_FILE_NOT_FOUND:      { code: 3004, key: 'driverFileNotFound' },
 
   // 网络/存储/转发 (4000-4999)
