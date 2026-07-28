@@ -1,0 +1,73 @@
+{
+	"rows": [
+		{
+			"field": "ConifgName",
+			"name": "名称",
+			"value": "APPName",
+			"valueType": "string",
+			"group": "基本属性",
+			"editor": "text"
+		},
+		{
+			"field": "Active",
+			"name": "激活",
+			"value": "0",
+			"valueType": "number",
+			"group": "基本属性",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"data": [
+						{
+							"id": "1",
+							"text": "是"
+						},
+						{
+							"id": "0",
+							"text": "否"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{
+			"field": "DBName",
+			"name": "数据库名称",
+			"value": "",
+			"valueType": "string",
+			"group": "基本属性",
+			"editor": "text"
+		},
+		{
+			"field": "Description",
+			"name": "描述",
+			"value": "",
+			"valueType": "string",
+			"group": "基本属性",
+			"editor": "text"
+		},
+		{
+			"field": "HostName",
+			"name": "IP",
+			"value": "127.0.0.1",
+			"valueType": "string",
+			"group": "基本属性",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": [
+						"'length[0,20]",
+						"IPCheck"
+					]
+				}
+			}
+		}
+	]
+}

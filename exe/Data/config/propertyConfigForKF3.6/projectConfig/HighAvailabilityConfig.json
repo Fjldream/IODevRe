@@ -1,0 +1,24 @@
+[{
+		"field": "Active",
+		"name": "Active"
+	}, {
+		"field": "Mode",
+		"name": "Mode"
+	}, {
+		"field": "MasterOrSlave",
+		"name": "MasterOrSlave"
+	}, {
+		"field": "HostName",
+		"name": "HostName"
+	}, {
+		"field": "HostPort",
+		"name": "HostPort"
+	}, {
+		"field": "HeartInterval",
+		"name": "HeartInterval"
+	},
+	{
+		"field": "MaxErrorTimes",
+		"name": "MaxErrorTimes"
+	}
+]

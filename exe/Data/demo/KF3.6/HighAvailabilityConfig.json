@@ -1,0 +1,11 @@
+{
+    "RedundanceConfig":{
+		"Active": 0,
+		"Mode":1,
+		"MasterOrSlave":1,
+		"HostNameMaster1": "127.0.0.1",
+		"HostPortMaster1": 10000,
+		"HeartInterval": 3000,
+		"MaxErrorTimes": 3
+	}
+}

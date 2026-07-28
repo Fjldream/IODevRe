@@ -1,0 +1,24 @@
+
+{
+	"logcfg":{
+        "terminal":{
+            "enable":1,
+            "level":"WARNING"
+		},
+        "file":{
+            "enable":1,
+            "level":"WARNING",
+		"LogDir":"./logs",
+            "fileNname":"system",
+            "maxSize":10,
+            "fileNum":7
+        },
+        "net":{
+            "enable":0,
+            "level": "DEBUG",
+            "mode":"udp",
+            "host":"172.30.20.10",
+            "port":22382
+	}
+    }
+}

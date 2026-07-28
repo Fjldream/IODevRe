@@ -1,0 +1,92 @@
+[{
+		"field": "DeviceID",
+		"name": "DeviceID"
+	}, {
+		"field": "DeviceName",
+		"name": "DeviceName"
+	}, {
+		"field": "Description",
+		"name": "Description"
+	}, {
+		"field": "Active",
+		"name": "Active"
+	}, {
+		"field": "DeviceGroup",
+		"name": "DeviceGroup"
+	}, {
+		"field": "DriverName",
+		"name": "DriverName"
+	},
+	{
+		"field": "DevAddress",
+		"name": "DevAddress"
+	},
+	{
+		"field": "DevNumber",
+		"name": "DevNumber"
+	},
+	{
+		"field": "LinkType",
+		"name": "LinkType"
+	},
+	{
+		"field": "SerialName",
+		"name": "SerialName"
+	},
+	{
+		"field": "SerialBaudRate",
+		"name": "SerialBaudRate"
+	},
+	{
+		"field": "SerialParity",
+		"name": "SerialParity"
+	},
+	{
+		"field": "SerialDataBits",
+		"name": "SerialDataBits"
+	},
+	{
+		"field": "SerialStopBits",
+		"name": "SerialStopBits"
+	},
+	{
+		"field": "Timeout",
+		"name": "Timeout"
+	},
+	{
+		"field": "FrequencyControlMode",
+		"name": "FrequencyControlMode"
+	},
+	{
+		"field": "ReconnectInterval",
+		"name": "ReconnectInterval"
+	},
+	{
+		"field": "MaxReconncetInterval",
+		"name": "MaxReconncetInterval"
+	},
+	{
+		"field": "DeviceProvider",
+		"name": "DeviceProvider"
+	},
+	{
+		"field": "DeviceCollectTime",
+		"name": "DeviceCollectTime"
+	},
+	{
+		"field": "TagID",
+		"name": "表名称"
+	},
+	{
+		"field": "OperatorType",
+		"name": "表名称"
+	},
+	{
+		"field": "Value",
+		"name": "表名称"
+	},
+	{
+		"field": "Frequency",
+		"name": "表名称"
+	}
+]

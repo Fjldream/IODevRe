@@ -1,0 +1,300 @@
+{
+	"total": 11,
+	"rows": [{
+			"name": "ID",
+			"value": "1",
+			"group": "基本属性",
+			"valueType": "number",
+			"defaultEditable": "true",
+			"common":0,
+			"code": "ChannelID",
+			"editor": ""
+		},
+		{
+			"name": "链路名称",
+			"value": "",
+			"group": "基本属性",
+			"valueType": "string",
+			"defaultEditable": "true",
+			"common":0,
+			"code": "ChannelName",
+			"editor": {
+				"type": "text"
+			}
+		},
+		{
+			"name": "类型",
+			"value": "1",
+			"group": "基本属性",
+			"valueType": "number",
+			"defaultEditable": "true",
+			"common":0,
+			"code": "ChannelType",
+			"editor": ""
+		},
+		{
+			"name": "描述",
+			"value": "",
+			"group": "基本属性",
+			"valueType": "string",
+			"defaultEditable": "true",
+			"common":0,
+			"code": "ChannelDescription",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": false,
+					"validType": ["length[1,128]", "numLetterCharacter"]
+				}
+			}
+		},
+		{
+			"name": "驱动名称",
+			"value": "",
+			"group": "基本属性",
+			"valueType": "string",
+			"defaultEditable": "true",
+			"common":0,
+			"code": "ChannelDriver",
+			"editor": ""
+		},
+		{
+			"name": "是否激活",
+			"value": 0,
+			"group": "基本属性",
+			"valueType": "number",
+			"defaultEditable": "true",
+			"common":0,
+			"code": "ChannelUnable",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"valueField": "roleid",
+					"textField": "rolename",
+					"fitColumns": true,
+					"multiple": false,
+					"editable": false,
+					"height": 33,
+					"panelHeight": "auto",
+					"data": [{
+							"roleid": 1,
+							"selectid": "1",
+							"rolename": "否"
+						},
+						{
+							"roleid": 0,
+							"selectid": "0",
+							"rolename": "是"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "初始化超时(ms)",
+			"value": "3000",
+			"group": "基本属性",
+			"valueType": "number",
+			"defaultEditable": "true",
+			"common":2,
+			"code": "InitTimeOut",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["dataRange[0,3000000]"]
+				}
+			}
+		},
+		{
+			"name": "通讯超时(ms)",
+			"value": "60000",
+			"group": "基本属性",
+			"valueType": "number",
+			"defaultEditable": "true",
+			"common":0,
+			"code": "CommunicationTimeOut",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["dataRange[0,3000000]"]
+				}
+			}
+		},
+		{
+			"name": "波特率",
+			"value": "9600",
+			"group": "基本属性",
+			"valueType": "number",
+			"defaultEditable": "true",
+			"common":1,
+			"code": "SerialBaudRate",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"valueField": "roleid",
+					"textField": "rolename",
+					"fitColumns": true,
+					"editable": false,
+					"multiple": false,
+					"panelHeight": "auto",
+					"data": [{
+							"roleid": "1200",
+							"selectid": "1",
+							"rolename": "1200"
+						},
+						{
+							"roleid": "2400",
+							"selectid": "1",
+							"rolename": "2400"
+						},
+						{
+							"roleid": "4800",
+							"selectid": "1",
+							"rolename": "4800"
+						},
+						{
+							"roleid": "9600",
+							"selectid": "1",
+							"rolename": "9600"
+						},
+						{
+							"roleid": "19200",
+							"selectid": "1",
+							"rolename": "19200"
+						},
+						{
+							"roleid": "28800",
+							"selectid": "1",
+							"rolename": "28800"
+						},
+						{
+							"roleid": "38400",
+							"selectid": "1",
+							"rolename": "38400"
+						},
+						{
+							"roleid": "76800",
+							"selectid": "1",
+							"rolename": "76800"
+						},
+						{
+							"roleid": "115200",
+							"selectid": "0",
+							"rolename": "115200"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "校验位",
+			"value": 0,
+			"group": "基本属性",
+			"valueType": "number",
+			"defaultEditable": "true",
+			"common":1,
+			"code": "SerialParity",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"valueField": "roleid",
+					"textField": "rolename",
+					"fitColumns": true,
+					"editable": false,
+					"multiple": false,
+					"panelHeight": "auto",
+					"data": [{
+							"roleid": 0,
+							"selectid": "1",
+							"rolename": "None"
+						},
+						{
+							"roleid": 1,
+							"selectid": "1",
+							"rolename": "Odd"
+						},
+						{
+							"roleid": 2,
+							"selectid": "1",
+							"rolename": "Even"
+						},
+						{
+							"roleid": 3,
+							"selectid": "1",
+							"rolename": "Mark"
+						},
+						{
+							"roleid": 4,
+							"selectid": "0",
+							"rolename": "Space"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "数据位",
+			"value": "8",
+			"group": "基本属性",
+			"valueType": "number",
+			"defaultEditable": "true",
+			"common":1,
+			"code": "SerialDataBits",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"valueField": "roleid",
+					"textField": "rolename",
+					"fitColumns": true,
+					"editable": false,
+					"multiple": false,
+					"panelHeight": "auto",
+					"data": [{
+							"roleid": "7",
+							"selectid": "1",
+							"rolename": "7"
+						},
+						{
+							"roleid": "8",
+							"selectid": "1",
+							"rolename": "8"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "停止位",
+			"value": "1",
+			"group": "基本属性",
+			"valueType": "number",
+			"defaultEditable": "true",
+			"common":1,
+			"code": "SerialStopBits",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"valueField": "roleid",
+					"textField": "rolename",
+					"fitColumns": true,
+					"editable": false,
+					"multiple": false,
+					"panelHeight": "auto",
+					"data": [{
+							"roleid": "1",
+							"selectid": "1",
+							"rolename": "1"
+						},
+						{
+							"roleid": "2",
+							"selectid": "1",
+							"rolename": "2"
+						}
+					]
+				}
+			}
+		}
+	]
+}

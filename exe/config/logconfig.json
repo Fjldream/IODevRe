@@ -1,0 +1,8 @@
+{
+	"appenders": {
+	  "writefile": { "type": "file", "filename": "../../../sdb/logs/kingioserver/log/kingiodev.log", "keepFileExt": true, "maxLogSize": 1048576, "backups": 2 }
+	},
+	"categories": {
+	  "default": { "appenders": [ "writefile" ], "level": "trace" }
+	}
+  }

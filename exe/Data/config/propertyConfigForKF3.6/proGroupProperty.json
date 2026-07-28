@@ -1,0 +1,22 @@
+{
+	"rows":[
+		{"field":"ProjectGroupName","name":"名称","value":"","group":"基本属性","editor":{
+																					"type":"validatebox",
+																					"options":{
+																						"required":true,
+																						"validType":["GroupNameCheck"]
+																					}
+																				}
+		},
+		{"field":"Description","name":"描述","value":"","group":"基本属性","editor":{
+																				"type":"validatebox",
+																				"options":{
+																					"required":false,
+																					"validType":["LetterCharacter"]
+																				}
+																			}
+		},
+		{"field":"ProjectGroupID","name":"ID","value":"","group":"基本属性","editor":""},
+		{"field":"ProjectGroupCreatTime","name":"创建时间","value":"","group":"基本属性","editor":""},
+		{"field":"ProjectGroupCreatPerson","name":"创建人","value":"user","group":"基本属性","editor":""}
+]}

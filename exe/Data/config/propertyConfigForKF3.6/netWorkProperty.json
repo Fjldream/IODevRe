@@ -1,0 +1,391 @@
+{
+	"rows": [
+		{
+			"name": "是否自动采集",
+			"field": "AutoEnable",
+			"value": 1,
+			"types": "number",
+			"group": "基本属性",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"data": [
+						{
+							"id": 1,
+							"text": "是"
+						},
+						{
+							"id": 0,
+							"text": "否"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{
+			"name": "数据转发模式",
+			"field": "TransMode",
+			"value": 0,
+			"types": "number",
+			"group": "基本属性",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"data": [
+						{
+							"id": 0,
+							"text": "定时"
+						},
+						{
+							"id": 1,
+							"text": "变化"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{
+			"name": "数据转发时间间隔(ms)",
+			"field": "TransInterval",
+			"value": 1000,
+			"types": "number",
+			"group": "基本属性",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": [
+						"dataRange[1000, 3000]"
+					]
+				}
+			}
+		},
+		{
+			"name": "历史数据发送模式",
+			"field": "HistoryDataMode",
+			"value": 0,
+			"types": "number",
+			"group": "基本属性",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"data": [
+						{
+							"id": 0,
+							"text": "定时"
+						},
+						{
+							"id": 1,
+							"text": "变化"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{
+			"name": "历史数据最大缓存条数",
+			"field": "HistoryDataCacheNumber",
+			"value": 100,
+			"types": "number",
+			"group": "基本属性",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": [
+						"dataRange[0,1024]"
+					]
+				}
+			}
+		},
+		{
+			"name": "历史数据最大缓存时间(h)",
+			"field": "HistoryDataCacheTime",
+			"value": 24,
+			"types": "number",
+			"group": "基本属性",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": [
+						"dataRange[0,24]"
+					]
+				}
+			}
+		},
+		{
+			"name": "文件缓存发送模式",
+			"field": "FileCacheMode",
+			"value": 0,
+			"types": "number",
+			"group": "基本属性",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"data": [
+						{
+							"id": 0,
+							"text": "定时"
+						},
+						{
+							"id": 1,
+							"text": "固定条数"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{
+			"name": "最大缓存容量(MB)",
+			"field": "CacheFileSize",
+			"value": 1024,
+			"types": "number",
+			"group": "基本属性",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": [
+						"dataRange[0,1024]"
+					]
+				}
+			}
+		},
+		{
+			"name": "最大缓存时间间隔(h)",
+			"field": "CacheFilePeriod",
+			"value": 24,
+			"types": "number",
+			"group": "基本属性",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": [
+						"dataRange[0,24]"
+					]
+				}
+			}
+		},
+		{
+			"name": "是否冗余",
+			"field": "Active",
+			"value": 0,
+			"types": "number",
+			"group": "冗余属性",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"data": [
+						{
+							"id": 1,
+							"text": "是"
+						},
+						{
+							"id": 0,
+							"text": "否"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{
+			"name": "切换模式",
+			"field": "Mode",
+			"value": 0,
+			"types": "number",
+			"group": "冗余属性",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"data": [
+						{
+							"id": 0,
+							"text": "冷切"
+						},
+						{
+							"id": 1,
+							"text": "温切"
+						},
+						{
+							"id": 2,
+							"text": "热切"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{
+			"name": "主从机",
+			"field": "MasterOrSlave",
+			"value": 0,
+			"types": "number",
+			"group": "冗余属性",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"data": [
+						{
+							"id": 0,
+							"text": "本机主机"
+						},
+						{
+							"id": 1,
+							"text": "本机从机"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{
+			"name": "从机IP",
+			"field": "HostNameMaster1",
+			"value": "127.0.0.1",
+			"types": "string",
+			"group": "冗余属性",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": [
+						"'length[0,20]",
+						"IPCheck"
+					]
+				}
+			}
+		},
+		{
+			"name": "从机端口号",
+			"field": "HostPortMaster1",
+			"value": 12306,
+			"types": "number",
+			"group": "冗余属性",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": [
+						"'length[0,20]",
+						"portNum"
+					]
+				}
+			}
+		},
+		{
+			"name": "心跳检测间隔(ms)",
+			"field": "HeartInterval",
+			"value": 1000,
+			"types": "number",
+			"group": "冗余属性",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": [
+						"dataRange[1000,100000]"
+					]
+				}
+			}
+		},
+		{
+			"name": "最大错误数",
+			"field": "MaxErrorTimes",
+			"value": 3,
+			"types": "number",
+			"group": "冗余属性",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": [
+						"dataRange[0,3]"
+					]
+				}
+			}
+		},
+		{
+			"name": "是否在容器中运行",
+			"field": "uncontained",
+			"value": false,
+			"group": "运维属性",
+			"editor": {
+				"type": "combobox",
+				"options": {
+					"data": [
+						{
+							"id": true,
+							"text": "是"
+						},
+						{
+							"id": false,
+							"text": "否"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{
+			"name": "开放端口",
+			"value": [],
+			"group": "运维属性",
+			"valueType": "object",
+			"defaultEditable": "true",
+			"field": "exposedPorts",
+			"editor": {
+				"type": "checkboxListInteral",
+				"options": {
+					"disabled": true
+				}
+			}
+		}
+	]
+}

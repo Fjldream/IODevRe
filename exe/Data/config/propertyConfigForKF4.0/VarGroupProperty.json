@@ -1,0 +1,21 @@
+{
+	"total":3,
+	"rows":[
+		{"name":"组名称","value":"Group1","group":"基本属性","code":"TagGroupName","editor":{
+																						"type":"validatebox",
+																						"options":{
+																							"required":true,
+																							"validType":["length[1,64]","LetterCharacter"]
+																						}
+																					}
+		},
+		{"name":"组描述","value":"描述","group":"基本属性","code":"Description","editor":{
+																					"type":"validatebox",
+																					"options":{
+																						"required": false,
+																						"validType":["length[1,128]","LetterCharacter"]
+																					}
+																				}
+		}
+	]
+}

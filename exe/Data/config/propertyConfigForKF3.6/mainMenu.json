@@ -1,0 +1,29 @@
+{
+	"title":"menu",
+	"datarows":[
+		{
+			"text": "数采开发系统",
+			"state":"open",
+			"iconCls": "icon-unit-developesys",
+			"url":"homepage.html",
+			"children": [
+				{
+					"text": "工程管理",
+					"iconCls": "icon-unit-projectmanage",
+					"url":"collectprojectgroup.html",
+					"children": []
+				},
+				{
+					"text": "驱动组件库",
+					"iconCls": "icon-unit-driver",
+					"url":"driverlibrarymanager.html"
+				},
+				{
+					"text": "发布查询",
+					"iconCls": "icon-unit-publishsearch",
+					"url":"publishproject.html"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+    "nodeInfo": {
+        "nodeId": "f69e726e-4077-4617-9cae-ccdffe0081db",
+        "nodeName": "node",
+        "address": "127.0.0.1",
+        "publicAddress": "127.0.0.1",
+        "port": 13000,
+        "backupAddress": "",
+        "redundancyNodeName": "",
+        "tenantId": "c7f1771f-0c8f-4c75-9d71-3b8c4b6bd190"
+    },
+    "maintenanceCenterInfo": {
+        "ip": "127.0.0.1",
+        "port": "12000"
+    },
+    "userCenterInfo": {
+        "ip": "127.0.0.1",
+        "port": 11006
+    }
+}

@@ -1,0 +1,16 @@
+[{
+	"field": "TableName",
+	"name": "TableName"
+}, {
+	"field": "TableDescription",
+	"name": "TableDescription"
+}, {
+	"field": "DecimalNum",
+	"name": "DecimalNum"
+}, {
+	"field": "RawValue",
+	"name": "RawValue"
+}, {
+	"field": "Value",
+	"name": "Value"
+}]

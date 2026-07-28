@@ -1,0 +1,11 @@
+{
+	"storageConfig":[
+
+		{"id":9,"text":"KH"},
+		{"id":10,"text":"KDL"}
+	],
+	"transConfig":[
+		{"id":5,"text":"WellinTech-MQTT","desc":"WellinTech-MQTT"},
+		{"id":2,"text":"亚马逊","desc":"amazoncloud"}
+	]
+}

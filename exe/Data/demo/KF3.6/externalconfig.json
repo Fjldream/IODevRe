@@ -1,0 +1,15 @@
+{
+	"expose": {
+		"httpPort": 9433,
+		"HeartbeatInterval":1,
+		"PerformanceInterval":10
+	},
+	"opsProxy": {
+		"host": "http://kiolincese:9601",
+		"HeartbeatInterval":1,
+		"PerformanceInterval":10
+	},
+	"license": {
+		"host": "http://king/lincese"
+	}
+}

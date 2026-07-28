@@ -1,0 +1,29 @@
+{
+    "total":3,
+    "rows":[
+        {"name":"系统平台","value":"","group":"基本属性","key":"SysPlatform","editor":{
+            "type":"combobox",
+            "options": {
+                "data":
+                [
+                    {"id":"CentOS","text":"CentOS","selected":true},
+                    {"id":"Ubuntu","text":"Ubuntu"},
+                    {"id":"Vantron","text":"Vantron"},
+                    {"id":"Moxa","text":"Moxa"},
+                    {"id":"Four-Faith","text":"Four-Faith"},
+                    {"id":"Windows","text":"Windows"}
+                ],
+                "valueField":"id", 
+                "height":22,  
+                "width":40,
+                "editable":false,
+                "textField":"text"
+            }
+        }},
+        {"name":"选择驱动文件","value":"","group":"基本属性","key":"DriverFile","editor":{
+            "type":"textbox",
+            "options":{"disabled": false}
+        }},
+        {"name":"驱动描述","value":"描述","group":"基本属性","key":"DriverDesc","editor":"text"}
+    ]
+}

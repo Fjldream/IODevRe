@@ -1,0 +1,1 @@
+let logConfig=null;logConfig="development"===process.env.NODE_ENV?require("./config/log4js").development:require("./config/log4js").production,module.exports=logConfig;

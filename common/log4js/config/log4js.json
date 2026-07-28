@@ -1,0 +1,84 @@
+{
+    "production": {
+        "appenders": {
+            "request": {
+                "type": "dateFile",
+                "filename": "../log/access",
+                "pattern": ".yyyy-MM-dd.log",
+                "alwaysIncludePattern": true,
+                "layout": {
+                    "type": "pattern",
+                    "pattern": "%d{yyyy-MM-dd hh:mm:ss.SSS} %p %m"
+                }
+            },
+            "application": {
+                "type": "dateFile",
+                "filename": "../log/system",
+                "pattern": ".yyyy-MM-dd.log",
+                "alwaysIncludePattern": true,
+                "layout": {
+                    "type": "pattern",
+                    "pattern": "%d{yyyy-MM-dd hh:mm:ss.SSS} %p %m"
+                }
+            }
+        },
+        "categories": {
+            "default": {
+                "appenders": [
+                    "application"
+                ],
+                "level": "warn"
+            },
+            "http": {
+                "appenders": [
+                    "request"
+                ],
+                "level": "info"
+            }
+        }
+    },
+    "development": {
+        "appenders": {
+            "default": {
+                "type": "console",
+                "alwaysIncludePattern": true,
+                "category": "default"
+            },
+            "request": {
+                "type": "dateFile",
+                "filename": "../log/access",
+                "pattern": ".yyyy-MM-dd.log",
+                "alwaysIncludePattern": true,
+                "layout": {
+                    "type": "pattern",
+                    "pattern": "%d{yyyy-MM-dd hh:mm:ss.SSS} %p %m"
+                }
+            },
+            "application": {
+                "type": "dateFile",
+                "filename": "../log/system",
+                "pattern": ".yyyy-MM-dd.log",
+                "alwaysIncludePattern": true,
+                "layout": {
+                    "type": "pattern",
+                    "pattern": "%d{yyyy-MM-dd hh:mm:ss.SSS} %p %m"
+                }
+            }
+        },
+        "categories": {
+            "default": {
+                "appenders": [
+                    "default",
+                    "application"
+                ],
+                "level": "all"
+            },
+            "http": {
+                "appenders": [
+                    "request"
+                ],
+                "level": "all"
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+[{
+	"id": 0,
+	"text": "",
+	"iconCls": "icon-unit-project",
+	"attributes": {
+		"url": "projectsimpleinfo.html"
+	},
+	"children": [{
+			"text": "设备",
+			"iconCls": "icon-unit-device",
+			"attributes": {
+				"url": "devicemanager.html",
+				"type": "device"
+			},
+			"children": []
+		}, {
+			"text": "变量",
+			"iconCls": "icon-unit-var",
+			"attributes": {
+				"url": "variablemanager.html",
+				"type": "var"
+			},
+			"children": []
+		}, 
+		{
+			"text": "网络配置",
+			"iconCls": "icon-unit-network",
+			"attributes": {
+				"url": "devicemanager.html"
+			}
+		},
+		{
+			"text": "存储配置",
+			"iconCls": "icon-unit-storage",
+			"attributes": {
+				"url": "storageconfig.html"
+			}
+		}, {
+			"text": "转发配置",
+			"iconCls": "icon-unit-transform",
+			"attributes": {
+				"url": "transconfig.html"
+			}
+		}, {
+			"text": "非线性表",
+			"iconCls": "icon-unit-network",
+			"attributes": {
+				"url": "nonlinearepitope.html"
+			}
+		}, {
+			"text": "OPCUA",
+			"iconCls": "icon-unit-device",
+			"attributes": {
+				"url": "opcua.html",
+				"type": "opcua"
+			},
+			"children": []
+		}
+	]
+}]

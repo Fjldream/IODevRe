@@ -1,0 +1,57 @@
+{
+"opsCenterAddress":"172.30.20.170",
+"opsPublicAddress":"172.30.20.170",
+"opsProxy":"172.30.20.170",
+"proxyPublicAddress":"172.30.20.170",
+    "nginxType": 1,
+    "nginxPort": 443,
+    "startport": 13000,
+    "opsProxyShift": {
+        "kingopsProxy": 0,
+        "kingguard": 1
+    },
+    "opsCenterPort": {
+        "kinglicense": 11007,
+        "kingops": 12000,
+        "kingfile": 12001,
+        "kingservicediscovery": 12002,
+        "kinggis": 12003,
+        "kingservicediscoverystandby": 12005
+    },
+    "oauth": {
+        "active": {
+"address":"172.30.20.170",
+            "oauthPort": 11006,
+            "license": 12007
+        },
+        "standby": {
+            "address": "127.0.0.1",
+            "oauthPort": 11006,
+            "license": 12007
+        }
+    },
+    "redis": {
+"host":"172.30.20.170:6379",
+        "pwd": "KingFusion@2020"
+    },
+    "oauthClient": {
+        "grantType": "password",
+        "redirectUri": "http://127.0.0.1/main",
+        "clientname": "KFCloud",
+        "description": "KF3.6 Proxy",
+        "clientId": "9EAE7E9C1245D0AA",
+        "clientSecret": "D144E1BA8F7817774896626DD7407DC6"
+    },
+    "nodeInfo": {
+"nodeName":"admin"
+    },
+    "userInfo": {
+"username":"admin001",
+"password":"123456"
+    },
+    "network": "",
+    "docker": {
+        "port": 2375,
+        "active": true
+    }
+}

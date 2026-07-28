@@ -1,0 +1,25 @@
+{
+	"FileList": [
+		"DataBaseConfig.json",
+		"DataTransInfo.json",
+		"DeviceGroupInfo.json",
+		"DeviceInfo.json",
+		"HighAvailabilityInfo.json",
+		"ProjectFileList.json",
+		"ProjectPorperty.json",
+		"VarGroupInfo.json",
+		"NonlinearInfo.json",
+		"interalconfig.json",
+		"VarInfo.json",
+		{
+			"FolderName": "Driver",
+			"FileList": [
+				"DriverInfo.json"
+			]
+		},
+		{
+			"FolderName": "Cert",
+			"FileList": []
+		}
+	]
+}

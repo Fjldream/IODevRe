@@ -1,0 +1,102 @@
+{
+	"OPCUAConfig": {
+		"rows": [
+			{
+				"field": "OPCServerName",
+				"name": "OPCUAServer名称",
+				"value": "UAConnect1",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "URL",
+				"name": "服务器URL",
+				"value": "opc.tcp://127.0.0.1:37800",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": [
+							"length[1,128]"
+						]
+					}
+				}
+			},
+			{
+				"field": "username",
+				"name": "用户名",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"length[1,128]"
+						]
+					}
+				}
+			},
+			{
+				"field": "password",
+				"name": "密码",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "passwordbox",
+					"options": {
+						"required": false,
+						"prompt": "Password",
+						"showEye": true
+					}
+				}
+			},
+			{
+				"field": "RecoveryTime",
+				"name": "最长恢复时间",
+				"value": 24,
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"dataRange[0, 3600]"
+						]
+					}
+				}
+			},
+			{
+				"field": "reconnectTime",
+				"name": "尝试重连时间",
+				"value": 30,
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"dataRange[0,3600]"
+						]
+					}
+				}
+			}
+		]
+	}
+}

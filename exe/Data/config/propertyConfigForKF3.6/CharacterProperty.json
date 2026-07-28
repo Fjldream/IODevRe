@@ -1,0 +1,33 @@
+{
+	"total":3,"rows":[
+		{"name":"角色名称","value":"role1","group":"基本属性","valueType":"string","defaultEditable":"true","code":"CharacterName","editor":{
+			"type":"validatebox",
+			"options": {
+				"required":true,
+				"validType":["length[1,64]","numLetterCharacter"]
+			}
+		}},
+		{"name":"角色描述","value":"desc1","group":"基本属性","valueType":"string","defaultEditable":"true","code":"CharacterDesc","editor":{
+			"type": "validatebox",
+			"options": {
+				"required":false,
+				"validType":["length[1,128]","numLetterCharacter"]
+			}
+		}},
+		{"name":"角色ID","value":"","group":"默认属性","valueType":"number","defaultEditable":"false","code":"CharacterID","editor":""},
+		{"name":"工程权限","value":"","group":"基本属性","valueType":"object","defaultEditable":"true","code":"ProjectAuthority","editor":{
+			"type": "combotree",
+			 "options": {
+                "valueField": "ID",
+                "textField": "Name",
+                "fitColumns": true,
+				"multiple": false,
+				"editable":false,
+				"height":33,
+				"panelHeight":"auto",
+                "data": [] 
+            }
+        }},
+		{"name":"权限用户","value":"","group":"基本属性","valueType":"object","defaultEditable":"true","code":"Users","editor":""}
+	]
+}

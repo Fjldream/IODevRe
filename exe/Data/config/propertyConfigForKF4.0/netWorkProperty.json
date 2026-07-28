@@ -1,0 +1,152 @@
+{
+	"rows": [
+		{ "name": "是否激活", "field": "Active", "value": 0, "types": "number", "group": "冗余属性", "editor": {
+				"type": "combobox",
+				"options": {
+					"data": [{
+							"id": 0,
+							"text": "否"
+						},
+						{
+							"id": 1,
+							"text": "是"
+						}
+					],
+					"valueField": "id",
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{ "name": "切换模式", "field": "Mode", "value": 1, "types": "number", "group": "冗余属性", "editor": {
+				"type": "combobox",
+				"options": {
+					"data": [{
+							"id": 1,
+							"text": "冷切"
+						},
+						{
+							"id": 2,
+							"text": "温切"
+						},
+						{
+							"id": 3,
+							"text": "热切"
+						}
+					],
+					"valueField": "id",
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{ "name": "主从机", "field": "MasterOrSlave", "value": 0, "types": "number", "group": "冗余属性", "editor": {
+				"type": "combobox",
+				"options": {
+					"data": [{
+							"id": 0,
+							"text": "本机主机"
+						},
+						{
+							"id": 1,
+							"text": "本机从机"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{ "name": "冗余地址", "field": "HostName", "value": "127.0.0.1", "types": "string", "group": "冗余属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["'length[0,20]", "IPCheck"]
+				}
+			}
+		},
+		{ "name": "心跳监测间隔(ms)", "field": "HeartInterval", "value": 1000, "types": "number", "group": "冗余属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["dataRange[1000,3000]"]
+				}
+			}
+		},
+		{ "name": "最大错误数", "field": "MaxErrorTimes", "value": 1, "types": "number", "group": "冗余属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["dataRange[0,3]"]
+				}
+			}
+		},
+		{ "name": "冗余站点名称", "field": "StationName", "value": "IOStation", "types": "string", "group": "冗余属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["length[1,64]", "LetterCharacter"]
+				}
+			}
+		},
+		{ "name": "备份冗余主机地址", "field": "BackupHostName", "value": "192.168.187.131", "types": "string", "group": "冗余属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["'length[0,20]", "IPCheck"]
+				}
+			}
+		},
+		{ "name": "是否使用专用网卡", "field": "SpecialNetCard", "value": 0, "types": "number", "group": "冗余属性", "editor": {
+				"type": "combobox",
+				"options": {
+					"data": [{
+							"id": 0,
+							"text": "否"
+						},
+						{
+							"id": 1,
+							"text": "是"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{ "name": "本机IOServer站点专用网卡", "field": "LocalSpecialNetCardIP", "value": "127.0.0.1", "types": "string", "group": "冗余属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["'length[0,20]", "IPCheck"]
+				}
+			}
+		},
+		{ "name": "冗余IOServer站点专用网卡", "field": "RedunSpecialNetCardIP", "value": "127.0.0.1", "types": "string", "group": "冗余属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["'length[0,20]", "IPCheck"]
+				}
+			}
+		},
+		{ "name": "手动切换超时(ms)", "field": "ManualSwitchTimeOut", "value": 1000, "types": "number", "group": "冗余属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["dataRange[1000,3000]"]
+				}
+			}
+		}
+	]
+}

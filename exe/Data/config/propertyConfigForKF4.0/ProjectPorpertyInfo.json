@@ -1,0 +1,130 @@
+{
+	"rows": [
+		{ "field": "ProjectID", "name": "ID", "types":"String", "value": "", "group": "基本属性", "editor": "" },
+		{ "field": "ProjectName", "name": "名称", "types":"String", "value": "", "group": "基本属性", "editor": "" },
+		{ "field": "Description", "name": "描述", "types":"String", "value": "", "group": "基本属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": false,
+					"validType": ["length[1,128]", "LetterCharacter"]
+				}
+			}
+		},
+		{ "field": "ProjectVersion", "name": "工程版本", "types":"Number", "value": "1", "group": "基本属性", "editor": "" },
+		{ "field": "ProjectTypeVersion", "name": "开发IDE版本", "types":"String", "value": "1.0.0.1", "group": "基本属性", "editor": "" },
+		{ "field": "Creator", "name": "创建人", "types":"String", "value": "user", "group": "基本属性", "editor": "" },
+		{ "field": "CreateTime", "name": "创建时间", "types":"String", "value": "2020-02-20 00.00.00.000", "group": "基本属性", "editor": "" },
+		{ "field": "ModifyTime", "name": "修改时间", "types":"String", "value": "2020-01-01 00.00.00.000", "group": "基本属性", "editor": "" },
+		{ "field": "HeartbeatInterval", "name": "心跳间隔(s)", "types":"Number", "value": "1", "group": "基本属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["dataRange[1,5]"]
+				}
+			}
+		},
+		{ "field": "ConfigFilePath", "name": "工程文件路径", "types":"String", "value": "", "group": "基本属性", "editor": "" },
+		{ "field": "StationName", "name": "站点名", "types":"String", "value": "test", "group": "基本属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": false,
+					"validType": ["length[1,64]", "LetterCharacter"]
+				}
+			}
+		},
+		{ "field": "IP", "name": "主网卡IP", "types":"String", "value": "127.0.0.1", "group": "基本属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["'length[0,20]", "IPCheck"]
+				}
+			}
+		},
+		{ "field": "BackupIP", "name": "备份网卡IP", "types":"String", "value": "192.168.137.131", "group": "基本属性", "editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["'length[0,20]", "IPCheck"]
+				}
+			}
+		},
+		{ "field": "Port", "name": "主机端口号", "types":"Number", "value": "12306", "group": "基本属性", "editor":{
+				"type": "validatebox",
+				"options": {
+					"required":true,
+					"validType":["'length[0,20]","portNum"]
+				}
+			}
+		},
+		{ "field": "Template", "name": "是否是样板应用程序类型", "types":"Number", "value": "0", "group": "基本属性", "editor": {
+				"type": "combobox",
+				"options": {
+					"data": [{
+							"id": 0,
+							"text": "否"
+						},
+						{
+							"id": 1,
+							"text": "是"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{ "field": "FileName", "name": "文件名", "types":"String", "value": "kingioserver", "group": "基本属性", "editor": ""},
+		{ "field": "TagPointsNum", "name": "变量点数", "types":"Number", "value": "0", "group": "基本属性", "editor": "" },
+		{ "field": "OEMID", "name": "OEMID", "types":"Number", "value": "1", "group": "基本属性", "editor": "" },
+		{ "field": "Active", "name": "是否当前工程", "types":"Number", "value": "1", "group": "基本属性", "editor": {
+				"type": "combobox",
+				"options": {
+					"data": [{
+							"id": 0,
+							"text": "否"
+						},
+						{
+							"id": 1,
+							"text": "是"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{ "field": "ProjectFilesValid", "name": "工程创建是否有效", "types":"Number", "value": "1", "group": "基本属性", "editor": {
+				"type": "combobox",
+				"options": {
+					"data": [{
+							"id": 0,
+							"text": "否"
+						},
+						{
+							"id": 1,
+							"text": "是"
+						}
+					],
+					"valueField": "id",
+					"height": 22,
+					"width": 40,
+					"editable": false,
+					"textField": "text",
+					"panelHeight": "auto"
+				}
+			}
+		},
+		{ "field": "PrevFileVersion", "name": "升级前的版本号码", "types":"Number", "value": "1", "group": "基本属性", "editor": "" },
+		{ "field": "FullFileName", "name": "应用程序全路径", "types":"String", "value": "", "group": "基本属性", "editor": "" }, 
+		{ "field": "BasePath", "name": "应用程序路径", "types":"String", "value": "", "group": "基本属性", "editor":""  },
+		{ "field": "SysPlatform", "name": "运行系统", "types":"String", "value": "", "group": "基本属性", "editor":""  }
+	]
+}

@@ -1,0 +1,162 @@
+{
+    "TagName": [
+        {
+            "validator":"numLetterCharacter",
+            "secondParam":"param",
+            "message":"数字、字母、汉字与下划线之间的组合"
+        },
+        {
+            "validator":"length",
+            "secondParam":"param = [1,64]",
+            "message":"需要由1到64个字符组成"
+        }
+    ],
+    "Description": [
+        {
+            "validator":"numLetterCharacter",
+            "secondParam":"param",
+            "message":"数字、字母、汉字与下划线之间的组合"
+        },
+        {
+            "validator":"length",
+            "secondParam":"param = [1,100]",
+            "message":"需要由1到100个字符组成"
+        }
+    ],
+    "TagType": [
+        {
+            "validator":"enumeration",
+            "secondParam":"param = [2,4]",
+            "message":"仅支持2,4"
+        }
+    ],
+    "AccessType": [
+        {
+            "validator":"enumeration",
+            "secondParam":"param = [0,1,2]",
+            "message":"仅支持0,1,2"
+        }
+    ],
+    "CollectTimeInterval": [
+        {
+            "validator":"dataRange",
+            "secondParam":"param = [100, 86400, 1]",
+            "message":"需要输入100到86400之间的数字"
+        },
+        {
+            "validator":"integer",
+            "secondParam":"param",
+            "message":"需要输入整数"
+        }
+    ],
+    "DataConvertType": [
+        {
+            "validator":"enumeration",
+            "secondParam":"param = [0, 1, 2, 3, 4, 5]",
+            "message":"仅支持0, 1, 2, 3, 4, 5"
+        }
+    ],
+    "MaxRawValue": [
+        {
+            "validator":"floatNum",
+            "secondParam":"param",
+            "message":"请输入有效整数或浮点数"
+        }
+    ],
+    "MinRawValue": [
+        {
+            "validator":"floatNum",
+            "secondParam":"param",
+            "message":"请输入有效整数或浮点数"
+        }
+    ],
+    "MaxValue": [
+        {
+            "validator":"floatNum",
+            "secondParam":"param",
+            "message":"请输入有效整数或浮点数"
+        }
+    ],
+    "MinValue": [
+        {
+            "validator":"floatNum",
+            "secondParam":"param",
+            "message":"请输入有效整数或浮点数"
+        }
+    ],
+    "DataConvertCoefficient": [
+        {
+            "validator":"floatNum",
+            "secondParam":"param",
+            "message":"请输入有效整数或浮点数"
+        }
+    ],
+    "DataConvertDeviation": [
+        {
+            "validator":"floatNum",
+            "secondParam":"param",
+            "message":"请输入有效整数或浮点数"
+        }
+    ],
+    "ValueRangeType": [],
+    "DataCleaningType":[
+        {
+            "validator":"enumeration",
+            "secondParam":"param = [0, 1, 2, 3, 4, 5, 6, 7, 8]",
+            "message":"仅支持0, 1, 2, 3, 4, 5, 6, 7, 8"
+        }
+    ],
+    "DataCleaningUpperLimit": [
+        {
+            "validator":"floatNum",
+            "secondParam":"param",
+            "message":"请输入有效整数或浮点数"
+        }
+    ],
+    "DataCleaningLowerLimit": [
+        {
+            "validator":"floatNum",
+            "secondParam":"param",
+            "message":"请输入有效整数或浮点数"
+        }
+    ],
+    "ChangeRate": [
+        {
+            "validator":"dataRange",
+            "secondParam":"param = [0, 100, 1]",
+            "message":"需要输入0到100之间的数字"
+        },
+        {
+            "validator":"floatNum",
+            "secondParam":"param",
+            "message":"请输入有效整数或浮点数"
+        }
+    ],
+    "DeadbandRate": [
+        {
+            "validator":"dataRange",
+            "secondParam":"param = [0, 100, 1]",
+            "message":"需要输入0到100之间的数字"
+        },
+        {
+            "validator":"floatNum",
+            "secondParam":"param",
+            "message":"请输入有效整数或浮点数"
+        }
+    ],
+    "NonLinearName": [],
+    "DeviceName": [],
+    "DeviceID": [],
+    "TagID": [],
+    "TagGroup": [],
+    "RegName": [],
+    "RegAddress": [],
+    "TagDataType": [],
+    "RegDataType": [],
+    "ChannelDriver": [],
+    "Company": [],
+    "DeviceSeries": [],
+    "DriverName": [],
+    "SystemPlatform": [],
+    "VarPlcInfo": []
+}

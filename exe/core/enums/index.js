@@ -1,0 +1,6 @@
+const enums = {};
+
+enums.common = require('./enum_common');
+enums.entity = require('./enum_storeEntity');
+
+module.exports = enums;

@@ -1,0 +1,104 @@
+[{
+		"field": "TagID",
+		"name": "TagID"
+	}, {
+		"field": "TagName",
+		"name": "TagName"
+	}, {
+		"field": "Description",
+		"name": "Description"
+	}, {
+		"field": "DeviceID",
+		"name": "DeviceID"
+	}, {
+		"field": "DeviceName",
+		"name": "DeviceName"
+	}, {
+		"field": "TagGroup",
+		"name": "TagGroup"
+	},
+	{
+		"field": "TagType",
+		"name": "TagType"
+	},
+	{
+		"field": "TagDataType",
+		"name": "TagDataType"
+	},
+	{
+		"field": "TagConvertDataType",
+		"name": "TagConvertDataType"
+	},
+	{
+		"field": "AccessType",
+		"name": "AccessType"
+	},
+	{
+		"field": "RegName",
+		"name": "RegName"
+	},
+	{
+		"field": "RegAddress",
+		"name": "RegAddress"
+	},
+	{
+		"field": "VarPlcInfo",
+		"name": "VarPlcInfo"
+	},
+	{
+		"field": "CollectTimeInterval",
+		"name": "CollectTimeInterval"
+	},
+	{
+		"field": "DataConvertType",
+		"name": "DataConvertType"
+	},
+	{
+		"field": "MaxRawValue",
+		"name": "MaxRawValue"
+	},
+	{
+		"field": "MinRawValue",
+		"name": "MinRawValue"
+	},
+	{
+		"field": "MaxValue",
+		"name": "MaxValue"
+	},
+	{
+		"field": "MinValue",
+		"name": "MinValue"
+	},
+	{
+		"field": "NonLinearName",
+		"name": "NonLinearName"
+	},
+	{
+		"field": "DataCleaningType",
+		"name": "DataCleaningType"
+	},
+	{
+		"field": "DataCleaningUpperLimit",
+		"name": "DataCleaningUpperLimit"
+	},
+	{
+		"field": "DataCleaningLowerLimit",
+		"name": "DataCleaningLowerLimit"
+	},
+	{
+		"field": "ChangeRate",
+		"name": "ChangeRate"
+	},
+	{
+		"field": "DeadbandRate",
+		"name": "DeadbandRate"
+	},
+	{
+		"field": "AlarmUpperLimit",
+		"name": "AlarmUpperLimit"
+	},
+	{
+		"field": "AlarmLowerLimit",
+		"name": "AlarmLowerLimit"
+	}
+]

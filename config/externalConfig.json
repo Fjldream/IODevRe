@@ -1,0 +1,12 @@
+{
+	"projectDir": "../../../../sdb/c7f1771f-0c8f-4c75-9d71-3b8c4b6bd190/c7f1771f-0c8f-4c75-9d71-3b8c4b6bd190/kingioserver",
+	"PublishProjectInfo": {
+		"projectType": 5,
+		"execFileName": "kingioserver",
+		"execVersion": "1.0.0.1"
+	},
+	"accessToken": "5e26a6ffe1dba0a08cfdbaca4b2bb57cb0b45e59",
+	"checkTokenFlag": false,
+	"expires_in": 1612164954000,
+	"refreshToken": "aa63ffa6c713ebe36bb4386cbbb7f05560c38002"
+}

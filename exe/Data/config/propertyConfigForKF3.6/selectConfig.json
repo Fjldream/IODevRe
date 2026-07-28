@@ -1,0 +1,17 @@
+{
+	"storageConfig":[
+		{"id":1,"text":"SQLServer"},
+		{"id":2,"text":"MySQL"},
+		{"id":3,"text":"TimescaleDB"},
+		{"id":6,"text":"Redis"},
+		{"id":8,"text":"PostgreSQL"},
+		{"id":11,"text":"Tdengine"},
+		{"id":12,"text":"KingHistorian_Windows"},
+		{"id":13,"text":"KingHistorian4.0"}
+	],
+	"transConfig":[
+		{"id":5,"text":"WellinTech-MQTT","desc":"WellinTech-MQTT"},
+		{"id":2,"text":"亚马逊","desc":"amazoncloud"},
+		{"id":0,"text":"DataCenter","desc":"datacenter"}
+	]
+}

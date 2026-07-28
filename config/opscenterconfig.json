@@ -1,0 +1,30 @@
+{
+	"opsCenterAddress" : "127.0.0.1",
+	"nginxport":443,
+	"startport" : 12000,
+	"opsCenterPortShift" : {
+		"kingops" : 0,
+		"kingfile" : 1,
+		"kingservicediscovery" : 2,
+		"kinggis" : 3,
+		"kingguard" : 4,
+		"kingservicediscoverystandby" : 5,
+		"kingoauth": 6,
+		"kinglicense" :7,
+		"kingpermissionservice": 8,
+		"kinglogservice": 9
+	},
+	"redis" : {	
+		"host" : "127.0.0.1",
+		"port" : 6379,
+		"pwd" : "KingFusion@2020"
+	},
+	"oauthClient" : {
+		"grantType" : "password",
+		"redirectUri" : "/main",
+		"clientname" : "KingOps",
+		"description" : "KingOps",
+		"clientId" : "9EAE7E9C1245D0AA",
+		"clientSecret" : "D144E1BA8F7817774896626DD7407DC6"
+	}
+}

@@ -1,0 +1,61 @@
+[{
+	"id": 0,
+	"text": "",
+	"iconCls": "icon-unit-project",
+	"attributes": {
+		"url": "projectconfig.html"
+	},
+	"children": [{
+			"text": "设备",
+			"iconCls": "icon-unit-device",
+			"attributes": {
+				"url": "devicemanager.html",
+				"type": "device"
+			},
+			"children": []
+		}, {
+			"text": "变量",
+			"iconCls": "icon-unit-var",
+			"attributes": {
+				"url": "variablemanager.html",
+				"type": "var"
+			},
+			"children": []
+		}, {
+			"text": "链路",
+			"iconCls": "icon-unit-network",
+			"attributes": {
+				"url": "linkdeviceinfo.html",
+				"type": "linkdev"
+			},
+			"children": []
+		},
+		{
+			"text": "网络配置",
+			"iconCls": "icon-unit-network",
+			"attributes": {
+				"url": "devicemanager.html"
+			}
+		},
+		{
+			"text": "存储配置",
+			"iconCls": "icon-unit-storage",
+			"attributes": {
+				"url": "storageconfig.html"
+			}
+		},
+		{
+			"text": "非线性表",
+			"iconCls": "icon-unit-authority",
+			"attributes": {
+				"url": "nonlinearepitope.html"
+			}
+		}
+	]
+}, {
+	"text": "驱动组件",
+	"iconCls": "icon-unit-driver",
+	"attributes": {
+		"url": "driverlibrarymanager.html"
+	}
+}]

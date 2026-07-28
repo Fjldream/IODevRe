@@ -1,0 +1,39 @@
+{
+    "rows":[
+        {"field":"TemplateName","name":"对象模板名称","value":"Template1","valueType":"string","group":"基本属性","editor":{
+            "type": "validatebox",
+            "options": {
+                "disabled":false,
+                "required":true,
+                "validType":["length[1,64]","numLetterCharacter"]
+            }
+        }},
+        {"field":"Description","name":"描述","value":"","valueType":"string","group":"基本属性","editor":{
+            "type": "validatebox",
+            "options": {
+                "disabled":false,
+                "required":false,
+                "validType":["length[1,128]","numLetterCharacter"]
+            }
+        }},
+        {"field":"FieldList","name":"成员列表","value":[],"valueType":"object","group":"基本属性","editor": {
+            "type":"checkboxList",
+			"options":{"disabled": true}
+        }},
+        {"field":"LabelList","name":"属性列表","value":[
+            {"LabelName":"ObjectID", "LabelDataType":"String"}, 
+            {"LabelName":"ObjectName", "LabelDataType":"String"},
+            {"LabelName":"ProjectName", "LabelDataType":"String"}
+        ],"valueType":"object","group":"基本属性","editor": {
+            "type":"checkboxList",
+			"options":{"disabled": true}
+        }},
+        {"field":"ObjectList","name":"对象列表","value":[],"valueType":"object","group":"基本属性","editor": {
+			"type":"checkboxList",
+			"options":{
+                "disabled": true,
+                "gray":true
+            }
+		}}
+    ]
+}

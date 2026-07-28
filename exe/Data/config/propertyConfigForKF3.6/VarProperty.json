@@ -1,0 +1,398 @@
+{
+				"total":25,
+				"rows":[
+				{"name":"名称","value":"变量1","group":"基本属性","key":"TagName","valueType":"string", "editor":{
+					"type": "validatebox",
+					"options": {
+						"required":true,
+						"validType":["numLetterCharacter"]
+					}
+				}},
+				{"name":"描述","value":"","group":"基本属性","key":"Description","valueType":"string", "editor":{
+					"type": "validatebox",
+					"options": {
+						"required":false,
+						"validType":["LetterCharacter"]
+					}
+				}},
+				{"name":"所属变量组","value":"","group":"基本属性","key":"TagGroup","valueType":"string", "editor":{
+					"type":"textbox",
+					"options":{"disabled": true}
+				}},
+				{"name":"关联设备","value":"","group":"基本属性","key":"DeviceName","valueType":"string", "editor":{
+					"type": "combobox",
+					"options": {
+						"data":[],
+						"valueField":"id", 
+						"height":22,  
+						"width":40,
+						"editable":false,
+						"textField":"text",
+						"panelHeight":"auto"
+					}
+				}},
+				{"name":"寄存器名称","value":"","group":"基本属性","key":"RegName","valueType":"string", "editor":{
+					"type": "combobox",
+					"options": {
+						"data":[],
+						"valueField":"id", 
+						"height":22,  
+						"width":40,
+						"editable":false,
+						"textField":"text",
+						"panelHeight":"auto"
+					}
+				}},
+				{"name":"寄存器地址","value":"","group":"基本属性","key":"RegAddress","valueType":"string", "editor":{
+					"type": "validatebox",
+					"options": {
+						"required":true
+					}
+				}},
+				{"name":"寄存器数据类型","value":"","group":"基本属性","key":"RegDataType","valueType":"number","editor":{
+																"type": "combobox",
+																"options": {
+																	"data":
+																	[
+																		{"id":1,"text":"Bool","selected":true},
+																		{"id":4096,"text":"Char"},
+																		{"id":2,"text":"Byte"},
+																		{"id":4,"text":"Short"},
+																		{"id":8,"text":"Ushort"},
+																		{"id":16,"text":"BCD"},
+																		{"id":64,"text":"LongBCD"},
+																		{"id":2048,"text":"Int64"},
+																		{"id":32,"text":"Long"},
+																		{"id":8192,"text":"Ulong"},
+																		{"id":128,"text":"Float"},
+																		{"id":512,"text":"Double"},
+																		{"id":16384,"text":"Struct"},
+																		{"id":256,"text":"String"}
+																	],
+																	"valueField":"id", 
+																	"height":22,  
+																	"width":40,
+																	"editable":false,
+																	"textField":"text",
+																
+																	"panelHeight":"auto"															
+																}
+															}},
+				{"name":"转换数据类型","value":4,"group":"基本属性","key":"TagDataType","valueType":"number","editor":{
+					"type": "combobox",
+					"options": {
+						"data":
+						[
+							{"id":1,"text":"Bool","selected":true},
+							{"id":4096,"text":"Char"},
+							{"id":2,"text":"Byte"},
+							{"id":4,"text":"Short"},
+							{"id":8,"text":"Ushort"},
+							{"id":16,"text":"BCD"},
+							{"id":64,"text":"LongBCD"},
+							{"id":2048,"text":"Int64"},
+							{"id":32,"text":"Long"},
+							{"id":8192,"text":"Ulong"},
+							{"id":128,"text":"Float"},
+							{"id":512,"text":"Double"},
+							{"id":16384,"text":"Struct"},
+							{"id":256,"text":"String"}
+						],
+						"valueField":"id", 
+						"height":22,  
+						"width":40,
+						"editable":false,
+						"textField":"text",
+						
+						"panelHeight":"auto"
+					}
+				}},
+				{"name":"读写类型","value":0,"group":"基本属性","editor":{
+																"type": "combobox",
+																"options": {
+																	"data":
+																	[
+																		{"id":0,"text":"只读","selected":true},
+																		{"id":1,"text":"只写"},
+																		{"id":2,"text":"读写"}
+																	],
+																	"valueField":"id", 
+																	"height":22,  
+																	"width":40,
+																	"editable":false,
+																	"textField":"text",
+																	
+																	"panelHeight":"auto"
+																}
+															},"key":"AccessType","valueType":"number"},
+				{"name":"采集频率(ms)","value":"1000","group":"基本属性","key":"CollectTimeInterval","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"required":true,
+						"validType":["floatNum", "dataRange[100,86400]"]
+					}
+				}},
+				{"name":"存储使能","value":0,"group":"基本属性","editor":{
+					"type": "combobox",
+					"options": {
+						"data":
+						[
+							{"id":0,"text":"是","selected":true},
+							{"id":1,"text":"否"},
+							{"id":2,"text":"否"},
+							{"id":3,"text":"否"}
+						],
+						"valueField":"id", 
+						"height":22,  
+						"width":40,
+						"editable":false,
+						"textField":"text",
+						"panelHeight":"auto"
+					}
+				},"key":"StorEnable","valueType":"number"},
+				{"name":"存储模式","value":0,"group":"基本属性","editor":{
+					"type": "combobox",
+					"options": {
+						"data":
+						[
+							{"id":0,"text":"周期存","selected":true},
+							{"id":1,"text":"变化存"},
+							{"id":2,"text":"间隔存"},
+							{"id":4,"text":"采集存"}
+						],
+						"valueField":"id", 
+						"height":22,  
+						"width":40,
+						"editable":false,
+						"textField":"text",
+						"panelHeight":"auto"
+					}
+				},"key":"StorMode","valueType":"number"},
+				{"name":"存储周期(ms)","value":"1000","group":"基本属性","key":"StorCycle","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"required":false,
+						"validType":["integerall"]
+					}
+				}},
+				{"name":"时空名称","value":"","group":"基本属性","key":"SpaceTimeName","valueType":"string", "editor":{
+					"type": "validatebox",
+					"options": {
+						"required":true
+					}
+				}},
+				{"name":"时空变量名","value":"","group":"基本属性","key":"SpaceTimeTagName","valueType":"string", "editor":{
+					"type": "validatebox",
+					"options": {
+						"required":true
+					}
+				}},
+				{"name":"OPCUA转发","value":0,"group":"基本属性","editor":{
+					"type": "combobox",
+					"options": {
+						"data":
+						[
+							{"id":0,"text":"否","selected":true},
+							{"id":1,"text":"是"}
+						],
+						"valueField":"id", 
+						"height":22,  
+						"width":40,
+						"editable":false,
+						"textField":"text",
+						"panelHeight":"auto"
+					}
+				},"key":"UaTrans","valueType":"number"},
+				{"name":"OPCDA转发","value":0,"group":"基本属性","editor":{
+					"type": "combobox",
+					"options": {
+						"data":
+						[
+							{"id":0,"text":"否","selected":true},
+							{"id":1,"text":"是"}
+						],
+						"valueField":"id", 
+						"height":22,  
+						"width":40,
+						"editable":false,
+						"textField":"text",
+						"panelHeight":"auto"
+					}
+				},"key":"DaTrans","valueType":"number"},
+				{"name":"Mqtt转发","value":0,"group":"基本属性","editor":{
+					"type": "combobox",
+					"options": {
+						"data":
+						[
+							{"id":0,"text":"无","selected":true},
+							{"id":1,"text":"改变"},
+							{"id":2,"text":"间隔"},
+							{"id":4,"text":"每次采集转发"}
+						],
+						"valueField":"id", 
+						"height":22,  
+						"width":40,
+						"editable":false,
+						"textField":"text",
+						"panelHeight":"auto"
+					}
+				},"key":"MqTrans","valueType":"number"},
+				{"name":"间隔(s)","value":"1000","group":"基本属性","key":"MqInter","valueType":"number","editor":{}},				
+				{"name":"寄存器步长","value":"1","group":"批量属性","key":"StepSize","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"required":true,
+						"validType":["integerall", "dataRange[-100,100]"]
+					}
+				}},
+				{"name":"名称步长","value":"1","group":"批量属性","key":"NameStepSize","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"required":true,
+						"validType":["integerall", "dataRange[-100,100]"]
+					}
+				}},
+				{"name":"个数","value":"1","group":"批量属性","key":"Number","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"required":true,
+						"validType":["integer", "dataRange[1,3000]"]
+					}
+				}},
+				{"name":"转换模式","value":0,"group":"转换属性","key":"DataConvertType","valueType":"number","editor":{
+																"type": "combobox",
+																"options": {
+																	"data":
+																	[
+																		{"id":0,"text":"无","selected":true,"value":0},
+																		{"id":1,"text":"线性转换","value":1},
+																		{"id":5,"text":"非线性转换","value":5},
+																		{"id":2,"text":"平方根转换","value":2},
+																		{"id":4,"text":"直接累计","value":4},
+																		{"id":3,"text":"差值累计","value":3}
+																	],
+																	"valueField":"id", 
+																	"height":22,  
+																	"width":40,
+																	"editable":false,
+																	"textField":"text",
+																	"panelHeight":"auto"																
+																}
+															}},
+				{"name":"原始最大值","value":"32767","group":"转换属性","key":"MaxRawValue","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"validType":["floatNum"],
+						"disabled": true
+					}
+				}},
+				{"name":"原始最小值","value":"-32768","group":"转换属性","key":"MinRawValue","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"validType":["floatNum"],
+						"disabled": true
+					}
+				}},
+				{"name":"工程最大值","value":"32767","group":"转换属性","key":"MaxValue","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"validType":["floatNum"],
+						"disabled": true
+					}
+				}},
+				{"name":"工程最小值","value":"-32768","group":"转换属性","key":"MinValue","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"validType":["floatNum"],
+						"disabled": true
+					}
+				}},	
+				{"name":"清洗模式","value":0,"group":"清洗属性","valueType":"number","editor":{
+																"type": "combobox",
+																"options": {
+																	"data":
+																	[
+																		{"id":0,"text":"无 ","selected":true},
+																		{"id":9,"text":"值范围"},
+																		{"id":5,"text":"毛刺边界"},
+																		{"id":6,"text":"死区"}																			
+																	],
+																	"valueField":"id", 
+																	"height":22,  
+																	"width":40,
+																	"editable":false,
+																	"textField":"text",
+																	"disabled": true,
+																	"panelHeight":"auto"
+																}
+															},"key":"DataCleaningType"},
+				{"name":"值范围","value":"","group":"清洗属性","valueType":"number","editor":{
+																"type": "combobox",
+																"options": {
+																	"data":
+																	[
+																		{"id":1,"text":"大于等于最小值 且 小于等于最大值 ","selected":true},
+																		{"id":2,"text":"大于最大值 或 小于最小值"},
+																		{"id":7,"text":"大于等于最大值"},
+																		{"id":3,"text":"大于等于最小值"},
+																		{"id":8,"text":"小于等于最大值"},
+																		{"id":4,"text":"小于等于最小值"}																			
+																	],
+																	"valueField":"id", 
+																	"height":22,  
+																	"width":40,
+																	"editable":false,
+																	"textField":"text",
+																	"disabled": true,
+																	"panelHeight":"auto"
+																}
+															},"key":"ValueRangeType"},
+				{"name":"清洗最大值","value":"","group":"清洗属性","key":"DataCleaningUpperLimit","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"validType":["floatNum"],
+						"disabled": true
+					}
+				}},
+				{"name":"清洗最小值","value":"","group":"清洗属性","key":"DataCleaningLowerLimit","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"validType":["floatNum"],
+						"disabled": true
+					}
+				}},
+				{"name":"毛刺边界(%)","value":"","group":"清洗属性","key":"ChangeRate","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"validType":["floatNum"],
+						"disabled": true
+					}
+				}},
+				{"name":"死区(%)","value":"","group":"清洗属性","key":"DeadbandRate","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"validType":["floatNum"],
+						"disabled": true
+					}
+				}},
+				{"name":"非线性表","value":"","group":"转换属性","key":"NonLinearName","valueType":"string","editor":{
+					"type": "checkboxList",
+					"options": {
+						"disabled": true
+					}
+				}},
+				{"name":"系数","value":"1","group":"转换属性","key":"DataConvertCoefficient","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"validType":["floatNum"],
+						"disabled": true
+					}
+				}},
+				{"name":"偏移","value":"","group":"转换属性","key":"DataConvertDeviation","valueType":"number","editor":{
+					"type": "validatebox",
+					"options": {
+						"validType":["floatNum"],
+						"disabled": true
+					}
+				}}
+]}

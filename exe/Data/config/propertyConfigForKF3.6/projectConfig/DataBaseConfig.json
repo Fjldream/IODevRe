@@ -1,0 +1,85 @@
+[{
+		"field": "DBType",
+		"name": "类型"
+	}, {
+		"field": "Active",
+		"name": "激活"
+	}, {
+		"field": "DBName",
+		"name": "数据库名称"
+	}, {
+		"field": "Description",
+		"name": "描述"
+	}, {
+		"field": "HostName",
+		"name": "IP"
+	},
+	{
+		"field": "Port",
+		"name": "端口"
+	},
+	{
+		"field": "UserName",
+		"name": "用户名"
+	},
+	{
+		"field": "Password",
+		"name": "密码"
+	},
+	{
+		"field": "StorageInterval",
+		"name": "存储间隔"
+	},
+	{
+		"field": "TimeOut",
+		"name": "超时"
+	},
+	{
+		"field": "Cache",
+		"name": "缓存"
+	},
+	{
+		"field": "CachePath",
+		"name": "缓存路径"
+	},
+	{
+		"field": "CacheFileSize",
+		"name": "缓存大小"
+	},
+	{
+		"field": "DataVersion",
+		"name": "表结构"
+	},
+	{
+		"field": "ProjectName",
+		"name": "表结构"
+	},
+	{
+		"field": "GroupName",
+		"name": "表结构"
+	},
+	{
+		"field": "AlarmGroupName",
+		"name": "表结构"
+	},
+	{
+		"field": "bool",
+		"name": "表名称"
+	},
+	{
+		"field": "int",
+		"name": "表名称"
+	},
+	{
+		"field": "float",
+		"name": "表名称"
+	},
+	{
+		"field": "double",
+		"name": "表名称"
+	},
+	{
+		"field": "char",
+		"name": "表名称"
+	}
+]

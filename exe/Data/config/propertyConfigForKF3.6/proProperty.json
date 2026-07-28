@@ -1,0 +1,62 @@
+{"rows":[
+	{"field": "ProjectName","name":"名称","value":"","group":"基本属性","editor":{
+																			"type": "validatebox",
+																			"options": {
+																				"required":true,
+																				"validType":["ProNameCheck"]
+																			}
+																		}
+	},
+	{"field": "Description","name":"描述","value":"","group":"基本属性","editor":{
+																			"type": "validatebox",
+																			"options": {
+																				"required":false,
+																				"validType":["LetterCharacter"]
+																			}
+																		}
+	},
+	{"name":"CPU架构","value":"X86","group":"基本属性","field":"SysPlatform","editor":{
+																					"type": "combobox",
+																					"options": {
+																						"valueField": "roleid",
+																						"textField": "rolename",
+																						"fitColumns": true,
+																						"multiple": false,
+																						"editable":false,
+																						"panelHeight":"auto",
+																						"data": [
+																							{"roleid": "X86", "selectid": "6", "rolename": "X86"}
+																						] 
+																					}
+																				}
+	},
+	{"name":"操作系统","value":"Linux","group":"基本属性","field":"OsType","editor":{
+		"type": "combobox",
+		"options": {
+			"valueField": "roleid",
+			"textField": "rolename",
+			"fitColumns": true,
+			"multiple": false,
+			"editable":false,
+			"panelHeight":"auto",
+			"data": [
+				{"roleid": "Linux", "selectid": "21", "rolename": "Linux"},
+				{"roleid": "Windows", "selectid": "22", "rolename": "Windows"}
+			] 
+		}
+		}
+	},
+
+	{"field": "ProjectID","name":"ID","value":"1","group":"基本属性","editor":""},
+	{"field": "ProjectVersion","name":"工程版本","value":"1.0.1","group":"基本属性","editor":""},
+	{"field": "ProjectTypeVersion","name":"软件版本","value":"1.0","group":"基本属性","editor":""},
+	{"field": "Modifier","name":"修改人","value":"","group":"基本属性","editor":""},
+	{"field": "ModifyTime","name":"修改时间","value":"","group":"基本属性","editor":""},
+	{"field": "Creator","name":"创建人","value":"user","group":"基本属性","editor":""},
+	{"field": "CreateTime","name":"创建时间","value":"2020-02-20","group":"基本属性","editor":""},
+	{"field": "ListenPort","name":"监听端口","value":"","group":"基本属性","editor":""},
+	{"field": "DevGroupNUm","name":"设备组数量","value":"0","group":"设备统计","editor":""},
+	{"field": "DevNum","name":"设备数量","value":"0","group":"设备统计","editor":""},
+	{"field": "VarGroupNum","name":"变量组数量","value":"0","group":"变量统计","editor":""},
+	{"field": "VarNum","name":"变量数量","value":"0","group":"变量统计","editor":""}
+]}

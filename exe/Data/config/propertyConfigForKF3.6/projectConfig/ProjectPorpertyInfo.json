@@ -1,0 +1,76 @@
+[{
+		"field": "ProjectID",
+		"name": "ProjectID"
+	}, {
+		"field": "ProjectName",
+		"name": "ProjectName"
+	}, {
+		"field": "Description",
+		"name": "Description"
+	}, {
+		"field": "ProjectVersion",
+		"name": "ProjectVersion"
+	}, {
+		"field": "Creator",
+		"name": "Creator"
+	}, {
+		"field": "ProjectTypeVersion",
+		"name": "ProjectTypeVersion"
+	},
+	{
+		"field": "CreateTime",
+		"name": "CreateTime"
+	},
+	{
+		"field": "Modifier",
+		"name": "Modifier"
+	},
+	{
+		"field": "ModifyTime",
+		"name": "ModifyTime"
+	},
+	{
+		"field": "AutoEnable",
+		"name": "AutoEnable"
+	},
+	{
+		"field": "TransMode",
+		"name": "TransMode"
+	},
+	{
+		"field": "TransInterval",
+		"name": "TransInterval"
+	},
+	{
+		"field": "HistoryDataMode",
+		"name": "HistoryDataMode"
+	},
+	{
+		"field": "HistoryDataCacheNumber",
+		"name": "HistoryDataCacheNumber"
+	},
+	{
+		"field": "HistoryDataCacheTime",
+		"name": "HistoryDataCacheTime"
+	},
+	{
+		"field": "FileCacheMode",
+		"name": "FileCacheMode"
+	},
+	{
+		"field": "CacheFileSize",
+		"name": "CacheFileSize"
+	},
+	{
+		"field": "CacheFilePeriod",
+		"name": "CacheFilePeriod"
+	},
+	{
+		"field": "UserName",
+		"name": "UserName"
+	},
+	{
+		"field": "Password",
+		"name": "Password"
+	}
+]

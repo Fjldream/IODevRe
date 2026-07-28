@@ -1,0 +1,40 @@
+{"rows":[
+	{"field":"Active","name":"是否启用","value":"0","valueType":"number","group":"基本属性","editor":{
+									"type": "combobox",
+									"options": {
+										"data":
+										[
+											{"id":"1","text":"是"},
+											{"id":"0","text":"否"}
+										],
+										"valueField":"id", 
+										"editable":false,
+										"textField":"text",
+										"panelHeight":"auto"
+									}
+                                }},
+    {"field":"Cache","name":"是否缓存","value":"0","valueType":"number","group":"基本属性","editor":{
+									"type": "combobox",
+									"options": {
+										"data":
+										[
+											{"id":"1","text":"是"},
+											{"id":"0","text":"否"}
+										],
+										"valueField":"id", 
+										"editable":false,
+										"textField":"text",
+										"panelHeight":"auto"
+									}
+                                }},
+    {"field":"CachePath","name":"缓存路径","value":"D:/mydata","valueType":"string","group":"基本属性","editor":"text"},
+    {"field":"ClientID","name":"客户端标识","value":"","valueType":"string","group":"基本属性","editor":"text"},
+    {"field":"CacheFileSize","name":"缓存大小(M)","value":"0","valueType":"number","group":"基本属性","editor":{
+        "type": "validatebox",
+        "options": {
+            "required":true,
+            "validType":["dataRange[0,1024]"]
+        }
+    }},
+    {"field":"ImportPath","name":"导入路径","value":"","valueType":"string","group":"基本属性","editor":"text"}
+]}

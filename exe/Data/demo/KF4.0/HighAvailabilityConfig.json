@@ -1,0 +1,16 @@
+{
+	"RedundanceConfig": {
+		"Active": 0,
+		"Mode": 1,
+		"MasterOrSlave": 0,
+		"HostName": "127.0.0.1",
+		"HeartInterval": 1000,
+		"MaxErrorTimes": 1,
+		"StationName": "IOStation",
+		"BackupHostName": "192.168.187.131",
+		"SpecialNetCard": 0,
+		"LocalSpecialNetCardIP": "127.0.0.1",
+		"RedunSpecialNetCardIP": "127.0.0.1",
+		"ManualSwitchTimeOut": 1000
+	}
+}

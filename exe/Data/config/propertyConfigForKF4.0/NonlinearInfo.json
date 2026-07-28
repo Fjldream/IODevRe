@@ -1,0 +1,49 @@
+{
+	"total": 3,
+	"rows": [{
+			"name": "非线性表名称",
+			"value": "Sheet1",
+			"group": "基本属性",
+			"valueType": "string",
+			"defaultEditable": "true",
+			"code": "TableName",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["length[1,64]", "numLetterCharacter"]
+				}
+			}
+		},
+		{
+			"name": "非线性表描述",
+			"value": "",
+			"group": "基本属性",
+			"valueType": "string",
+			"defaultEditable": "true",
+			"code": "TableDescription",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": false,
+					"validType": ["length[1,128]", "numLetterCharacter"]
+				}
+			}
+		},
+		{
+			"name": "小数点精度",
+			"value": "2",
+			"group": "基本属性",
+			"valueType": "number",
+			"defaultEditable": "true",
+			"code": "DecimalNum",
+			"editor": {
+				"type": "validatebox",
+				"options": {
+					"required": true,
+					"validType": ["decimalNum[0,6,0]"]
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,237 @@
+{
+	"total":22,"rows":[
+		{"name":"设备名称","value":"设备1","group":"基本属性","valueType":"string","defaultEditable":"true","code":"DeviceName","editor":{
+			"type":"validatebox",
+			"options": {
+				"required":true,
+				"validType":["numLetterCharacter"]
+			}
+		}},
+		{"name":"设备描述","value":"描述","group":"基本属性","valueType":"string","defaultEditable":"true","code":"Description","editor":{
+			"type": "validatebox",
+			"options": {
+				"required":false,
+				"validType":["LetterCharacter"]
+			}
+		}},
+		{"name":"设备ID","value":"ID","group":"默认属性","valueType":"number","defaultEditable":"false","code":"DeviceID","editor":""},
+		{"name":"是否激活","value":"1","group":"基本属性","valueType":"number","defaultEditable":"true","code":"Active","editor":{
+			"type": "combobox",
+			 "options": {
+                "valueField": "roleid",
+                "textField": "rolename",
+                "fitColumns": true,
+				"multiple": false,
+				"editable":false,
+				"height":33,
+				"panelHeight":"auto",
+                "data": [{"roleid": 1, "selectid": "1", "rolename": "是"},
+					{"roleid": 0, "selectid": "0", "rolename": "否"}] 
+            }
+        }},
+		{"name":"设备组","value":"组1","group":"默认属性","valueType":"string","defaultEditable":"false","code":"DeviceGroup","editor":""},
+		{"name":"顺序号","value":"5001","group":"默认属性","valueType":"number","defaultEditable":"false","code":"DevNumber","editor":""},
+		
+		{"name":"超时(ms)","value":"3000","group":"基本属性","valueType":"number","defaultEditable":"true","code":"Timeout","editor":{
+			"type": "validatebox",
+			"options": {
+				"required":true,
+				"validType":["dataRange[0,30000]"]
+			}
+		}},
+		{"name":"采集频率(ms)","value":"1000","group":"基本属性","valueType":"number","defaultEditable":"true","code":"DeviceCollectTime","editor":{
+			"type": "validatebox",
+			"options": {
+				"required":true,
+				"validType":["dataRange[100,86400000]"]
+			}
+		}},
+		{"name":"重连间隔(ms)","value":"5000","group":"基本属性","valueType":"number","defaultEditable":"true","code":"ReconnectInterval","editor":{
+			"type": "validatebox",
+			"options": {
+				"required":true,
+				"validType":["dataRange[5000,86400000,0]"]
+			}
+		}},
+		{"name":"最大重连时间(ms)","value":"60000","group":"基本属性","valueType":"number","defaultEditable":"true","code":"MaxReconncetInterval","editor":{
+			"type": "validatebox",
+			"options": {
+				"required":true,
+				"validType":["dataRange[5000,604800000]"]
+			}
+		}},
+		{"name":"设备地址","value":"127.0.0.1","group":"基本属性","valueType":"string","defaultEditable":"true","code":"DevAddress","editor":{
+			"type":"validatebox",
+			"options":{"disabled": false}
+		}},
+		{"name":"驱动名称","value":"选择","group":"基本属性","valueType":"string","defaultEditable":"false","code":"DriverName","editor":{
+			"type":"checkboxList",
+			"options":{"disabled": true}
+		}},
+		{"name":"设备厂商","value":"选择驱动后匹配","group":"默认属性","valueType":"string","defaultEditable":"false","code":"DeviceProvider","editor":""},
+		{"name":"CPU架构","value":"选择驱动后匹配","group":"默认属性","valueType":"string","defaultEditable":"false","code":"SystemPlatform","editor":""},
+		{"name":"网关厂商","value":"选择驱动后匹配","group":"默认属性","valueType":"string","defaultEditable":"false","code":"Company","editor":""},
+		{"name":"设备系列","value":"选择驱动后匹配","group":"默认属性","valueType":"string","defaultEditable":"false","code":"DriverSeries","editor":""},
+		{"name":"驱动ID","value":"选择驱动后匹配","group":"默认属性","valueType":"string","defaultEditable":"false","code":"CLSID","editor":""},
+		{"name":"链路类型","value":0,"group":"基本属性","valueType":"number","defaultEditable":"true","code":"LinkType","editor":{
+			"type": "combobox",
+			 "options": {
+                "valueField": "roleid",
+                "textField": "rolename",
+                "fitColumns": true,
+				"multiple": false,
+				"editable":false,
+				"panelHeight":"auto",
+				"data": [{"roleid": 0, "selectid": "1", "rolename": "串口"},
+					{"roleid": 1, "selectid": "1", "rolename": "TCP"},
+					{"roleid": 2, "selectid": "0", "rolename": "UDP"}] 
+            }
+        }},
+		{"name":"串口名称","value":"COM1","group":"基本属性","valueType":"string","defaultEditable":"true","code":"SerialName","editor":{
+			"type":"validatebox",
+			"options":{"disabled": false}
+		}},
+		{"name":"波特率","value":"9600","group":"基本属性","valueType":"number","defaultEditable":"true","code":"SerialBaudRate","editor":{
+			"type": "combobox",
+			 "options": {
+                "valueField": "roleid",
+                "textField": "rolename",
+				"fitColumns": true,
+				"editable":false,
+				"multiple": false,
+				"panelHeight":"auto",
+				"data": [{"roleid": "1200", "selectid": "1", "rolename": "1200"},
+					{"roleid": "2400", "selectid": "1", "rolename": "2400"},
+					{"roleid": "4800", "selectid": "1", "rolename": "4800"},
+					{"roleid": "9600", "selectid": "1", "rolename": "9600"},
+					{"roleid": "19200", "selectid": "1", "rolename": "19200"},
+					{"roleid": "28800", "selectid": "1", "rolename": "28800"},
+					{"roleid": "38400", "selectid": "1", "rolename": "38400"},
+					{"roleid": "76800", "selectid": "1", "rolename": "76800"},
+					{"roleid": "115200", "selectid": "0", "rolename": "115200"}] 
+            }
+        }},
+		{"name":"校验位","value":0,"group":"基本属性","valueType":"number","defaultEditable":"true","code":"SerialParity","editor":{
+			"type": "combobox",
+			 "options": {
+                "valueField": "roleid",
+                "textField": "rolename",
+				"fitColumns": true,
+				"editable":false,
+				"multiple": false,
+				"panelHeight":"auto",
+				"data": [{"roleid": 0, "selectid": "1", "rolename": "None"},
+					{"roleid": 1, "selectid": "1", "rolename": "Odd"},
+					{"roleid": 2, "selectid": "1", "rolename": "Even"},
+					{"roleid": 3, "selectid": "1", "rolename": "Mark"},
+					{"roleid": 4, "selectid": "0", "rolename": "Space"}] 
+            }
+        }},
+		{"name":"数据位","value":"8","group":"基本属性","valueType":"number","defaultEditable":"true","code":"SerialDataBits","editor":{
+			"type": "combobox",
+			 "options": {
+                "valueField": "roleid",
+                "textField": "rolename",
+				"fitColumns": true,
+				"editable":false,
+				"multiple": false,
+				"panelHeight":"auto",
+				"data": [{"roleid": "7", "selectid": "1", "rolename": "7"},
+					{"roleid": "8", "selectid": "1", "rolename": "8"}] 
+            }
+        }},
+		{"name":"停止位","value":"1","group":"基本属性","valueType":"number","defaultEditable":"true","code":"SerialStopBits","editor":{
+			"type": "combobox",
+			 "options": {
+                "valueField": "roleid",
+                "textField": "rolename",
+				"fitColumns": true,
+				"editable":false,
+				"multiple": false,
+				"panelHeight":"auto",
+				"data": [{"roleid": "1", "selectid": "1", "rolename": "1"},
+					{"roleid": "2", "selectid": "1", "rolename": "2"}] 
+            }
+		}},
+		{"name":"变频模式","value":0,"group":"基本属性","valueType":"number","defaultEditable":"true","code":"FrequencyControlMode","editor":{
+			"type": "combobox",
+			 "options": {
+                "valueField": "roleid",
+                "textField": "rolename",
+				"fitColumns": true,
+				"editable":false,
+				"multiple": false,
+				"panelHeight":"auto",
+				"data": [{"roleid":0, "selectid": "1", "rolename": "标准模式"},
+					{"roleid":1, "selectid": "1", "rolename": "变频模式"}] 
+            }
+        }},
+		{"name":"变频条件","value":[],"group":"基本属性","valueType":"object","defaultEditable":"false","code":"FrequencySwitchCondition","editor": {
+			"type":"checkboxList",
+			"options":{"disabled": true}
+		}},
+		{ "name": "冗余使能", "value": "0", "group": "基本属性", "valueType": "number", "defaultEditable": "true", "code": "RedundancyEnable", "editor": {
+				"type": "combobox",
+				"options": {
+					"disabled":false,
+					"valueField": "roleid",
+					"textField": "rolename",
+					"fitColumns": true,
+					"multiple": false,
+					"editable": false,
+					"panelHeight": "auto",
+					"data": [{
+							"roleid": 0,
+							"selectid": "1",
+							"rolename": "否"
+						},
+						{
+							"roleid": 1,
+							"selectid": "1",
+							"rolename": "是"
+						}
+					]
+				}
+			}
+		},
+		{ "name": "冗余类型", "value": "0", "group": "默认属性", "valueType": "number", "defaultEditable": "false", "code": "RedundancyStyle", "editor": {
+			"type": "combobox",
+			"options": {
+				"valueField": "roleid",
+				"textField": "rolename",
+				"fitColumns": true,
+				"multiple": false,
+				"editable": false,
+				"panelHeight": "auto",
+				"data": [{
+						"roleid": 0,
+						"selectid": "1",
+						"rolename": "无冗余设备"
+					},
+					{
+						"roleid": 1,
+						"selectid": "1",
+						"rolename": "冗余主设备"
+					},
+					{
+						"roleid": 2,
+						"selectid": "0",
+						"rolename": "冗余从设备"
+					}
+				]
+			}
+		}},
+		{"name":"冗余设备","value":"","group":"基本属性","valueType":"string","code":"RedunDeviceName","editor":{
+			"type": "combobox",
+			"options": {
+				"disabled":true,
+				"data":[],
+				"valueField":"roleid", 
+				"height":33, 
+				"editable":false,
+				"textField":"rolename",
+				"panelHeight":"auto"
+			}
+		}}
+	]
+}

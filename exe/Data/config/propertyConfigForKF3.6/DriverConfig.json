@@ -1,0 +1,49 @@
+{
+    "total":3,
+    "rows":[
+        {"name":"CPU架构","value":"X86","group":"基本属性","key":"SysPlatform","editor":{
+            "type":"combobox",
+            "options": {
+                "data":
+                [
+                    {"id":"Arm","text":"Arm"},
+                    {"id":"X86","text":"X86"},
+                    {"id":"Mips","text":"Mips"}
+                ],
+                "valueField":"id", 
+                "height":22,  
+                "width":40,
+                "editable":false,
+                "textField":"text"
+            }
+        }},
+        {"name":"操作系统","value":"Linux","group":"基本属性","key":"PlatformType","editor":{
+            "type":"combobox",
+            "options": {
+                "data":
+                [
+                    {"id":"Linux","text":"Linux"},
+                    {"id":"Windows","text":"Windows"}
+                ],
+                "valueField":"id", 
+                "height":22,  
+                "width":40,
+                "editable":false,
+                "textField":"text"
+            }
+        }},
+        {"name":"选择驱动文件","value":"","group":"基本属性","key":"DriverFile","editor":{
+            "type":"textbox",
+            "options":{
+                "disabled": true
+            }
+        }},
+        {"name":"驱动描述","value":"描述","group":"基本属性","key":"DriverDesc","editor":{
+            "type": "validatebox",
+            "options": {
+                "required":false,
+                "validType":["length[1,64]","LetterCharacter"]
+            }
+        }}
+    ]
+  }

@@ -1,0 +1,32 @@
+{
+    "oemConfig": {
+        "common": {
+            "product_en_full": "KingFusion",
+            "product_en_abbr": "KF3.6",
+            "version": "3.6",
+            "company_cn": "亚控科技",
+            "company_en": "Wellintech",
+            "alias": "管控一体化平台",
+            "logo": "/oem/oemDefaultImg/logo.png"
+        },
+        "devCenter": {
+            "loginBackground": "/oem/oemDefaultImg/login.png",
+            "mainBackground": "/oem/oemDefaultImg/main.gif"
+        }
+    },
+    "oemDefaultConfig": {
+        "common": {
+            "product_en_full": "KingFusion",
+            "product_en_abbr": "KF3.6",
+            "version": "3.6",
+            "company_cn": "亚控科技",
+            "company_en": "Wellintech",
+            "alias": "管控一体化平台",
+            "logo": "/oem/oemDefaultImg/logo.png"
+        },
+        "devCenter": {
+            "loginBackground": "/oem/oemDefaultImg/login.png",
+            "mainBackground": "/oem/oemDefaultImg/main.gif"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+[{
+		"field": "ParentID",
+		"name": "ParentID"
+	}, {
+		"field": "DeviceGroupID",
+		"name": "DeviceGroupID"
+	}, {
+		"field": "DeviceGroupName",
+		"name": "DeviceGroupName"
+	}, {
+		"field": "DeviceID",
+		"name": "DeviceID"
+	}, {
+		"field": "DeviceName",
+		"name": "DeviceName"
+	},{
+		"field": "Description",
+		"name": "Description"
+	}
+]

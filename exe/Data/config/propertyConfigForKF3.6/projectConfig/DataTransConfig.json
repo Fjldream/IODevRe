@@ -1,0 +1,76 @@
+[{
+		"field": "ID",
+		"name": "ID"
+	}, {
+		"field": "Name",
+		"name": "Name"
+	}, {
+		"field": "Type",
+		"name": "Type"
+	}, {
+		"field": "Provider",
+		"name": "Provider"
+	}, {
+		"field": "Active",
+		"name": "Active"
+	}, {
+		"field": "HostName",
+		"name": "HostName"
+	},
+	{
+		"field": "AccountName",
+		"name": "AccountName"
+	},
+	{
+		"field": "AccountPassword",
+		"name": "AccountPassword"
+	},
+	{
+		"field": "UserName",
+		"name": "UserName"
+	},
+	{
+		"field": "UserPassword",
+		"name": "UserPassword"
+	},
+	{
+		"field": "ClientID",
+		"name": "ClientID"
+	},
+	{
+		"field": "TopicID",
+		"name": "TopicID"
+	},
+	{
+		"field": "Qos",
+		"name": "Qos"
+	},
+	{
+		"field": "CAFile",
+		"name": "CAFile"
+	},
+	{
+		"field": "PublicKeyFile",
+		"name": "PublicKeyFile"
+	},
+	{
+		"field": "PrivateKeyFile",
+		"name": "PrivateKeyFile"
+	},
+	{
+		"field": "HistoryDataTimeout",
+		"name": "HistoryDataTimeout"
+	},
+	{
+		"field": "HeartPort",
+		"name": "HeartPort"
+	},
+	{
+		"field": "LogServerPort",
+		"name": "LogServerPort"
+	},
+	{
+		"field": "LicenseServerPort",
+		"name": "LicenseServerPort"
+	}
+]

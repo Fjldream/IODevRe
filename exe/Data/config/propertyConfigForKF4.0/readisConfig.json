@@ -1,0 +1,57 @@
+{"rows":[
+	{"field":"Active","name":"激活","value":"否","group":"基本属性","editor":{
+									"type": "combobox",
+									"options": {
+										"data":
+										[
+											{"id":"是","text":"是"},
+											{"id":"否","text":"否"}
+										],
+										"valueField":"id", 
+										"height":22,
+										"width":40,
+										"editable":false,
+										"textField":"text",
+										"panelHeight":"auto"
+									}
+								}},
+	{"field":"Description","name":"描述","value":"","group":"基本属性","editor":"text"},
+	{"field":"HostName","name":"IP","value":"127.0.0.1","group":"基本属性","editor":{
+										"type": "validatebox",
+										"options": {
+											"required":true,
+											"validType":["'length[0,20]","IPCheck"]
+										}
+									}
+								},
+	{"field":"Port","name":"端口号","value":"6379","group":"基本属性","editor":{
+									"type": "validatebox",
+									"options": {
+										"required":true,
+										"validType":["'length[0,20]","portNum"]
+									}
+								}
+							},
+	{"field":"Password","name":"密码","value":"admin123","group":"基本属性","editor":{
+									"type": "passwordbox",
+									"options": {
+										"prompt": "Password",
+										"showEye": true
+									}
+								}},
+	{"field":"StorageInterval","name":"存储间隔时间(ms)","value":"1000","group":"基本属性","editor":{
+												"type": "validatebox",
+												"options": {
+													"required":true,
+													"validType":["'length[0,20]","tranTime"]
+												}
+											}
+										},
+	{"field":"TimeOut","name":"超时(s)","value":"1","group":"基本属性","editor":{
+										"type": "validatebox",
+										"options": {
+											"required":true,
+											"validType":["'length[0,20]","errNUm"]
+										}
+									}}
+]}

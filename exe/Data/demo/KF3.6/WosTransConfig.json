@@ -1,0 +1,16 @@
+{
+    "Config":{
+        "Active":false,
+        "spaceTimeGUID":"",
+        "RepositoryID":"",
+        "IP":"172.16.32.51",
+        "Port":"9770",
+        "UserName":"贾松达",
+        "PassWord":"Admin001",
+        "EnRealDBPub":1,
+        "EnHistDBPub":1,
+        "Period":1000,
+        "RealDBSub":1,
+        "isAddProjectName":1
+    }
+}

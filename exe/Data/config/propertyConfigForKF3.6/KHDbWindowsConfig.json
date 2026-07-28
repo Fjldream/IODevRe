@@ -1,0 +1,93 @@
+{"rows":[
+	{"field":"Active","name":"激活","value":"0","valueType":"number","group":"基本属性","editor":{
+									"type": "combobox",
+									"options": {
+										"data":
+										[
+											{"id":"1","text":"是"},
+											{"id":"0","text":"否"}
+										],
+										"valueField":"id", 
+										"editable":false,
+										"textField":"text",
+										"panelHeight":"auto"
+									}
+								}},
+	{"field":"DBName","name":"数据库名","value":"test","valueType":"string","group":"基本属性","editor":{
+		"type": "validatebox",
+		"options": {
+			"required":false,
+			"validType":["length[1,128]","numLetterCharacter"]
+		}
+	}},
+	{"field":"Description","name":"描述","value":"","valueType":"string","group":"基本属性","editor":{
+		"type": "validatebox",
+		"options": {
+			"required":false,
+			"validType":["length[1,128]","numLetterCharacter"]
+		}
+	}},
+	{"field":"HostName","name":"IP","value":"127.0.0.1","valueType":"string","group":"基本属性","editor":{
+										"type": "validatebox",
+										"options": {
+											"required":true,
+											"validType":["'length[0,20]","IPCheck"]
+										}
+									}},	
+	{"field":"Port","name":"端口号","value":"0","valueType":"number","group":"基本属性","editor":{
+											"type": "validatebox",
+											"options": {
+												"required":true,
+												"validType":["'length[0,20]","portNum"]
+											}
+										}},
+	{"field":"UserName","name":"用户名","value":"","valueType":"string","group":"基本属性","editor":{
+		"type": "validatebox",
+		"options": {
+			"required":false,
+			"validType":["length[1,128]","numLetterCharacter"]
+		}
+	}},
+	{"field":"Password","name":"密码","value":"","valueType":"string","group":"基本属性","editor":{
+									"type": "passwordbox",
+									"options": {
+										"prompt": "Password",
+										"showEye": true
+									}
+								}},
+	{"field":"ConnectInterval","name":"尝试重连间隔(s)","value":"10","valueType":"number","group":"基本属性","editor":{
+        "type": "validatebox",
+        "options": {
+            "required":true,
+            "validType":["dataRange[1,3600]"]
+        }
+    }},	
+	{"field":"Cache","name":"是否缓存","value":"0","valueType":"number","group":"基本属性","editor":{
+									"type": "combobox",
+									"options": {
+										"data":
+										[
+											{"id":"1","text":"是"},
+											{"id":"0","text":"否"}
+										],
+										"valueField":"id", 
+										"editable":false,
+										"textField":"text",
+										"panelHeight":"auto"
+									}
+								}},
+	{"field":"CachePath","name":"缓存路径","value":"D:/mydata","valueType":"string","group":"基本属性","editor":{
+		"type": "validatebox",
+		"options": {
+			"required":true,
+			"validType":["pathName"]
+		}
+	}},
+	{"field":"CacheFileSize","name":"缓存大小(M)","value":"16","valueType":"number","group":"基本属性","editor":{
+											"type": "validatebox",
+											"options": {
+												"required":true,
+												"validType":["dataRange[0,1024]"]
+											}
+										}}
+]}

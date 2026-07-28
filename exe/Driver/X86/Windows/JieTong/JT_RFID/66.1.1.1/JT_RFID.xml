@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JT_RFID.xml>
+    <JT_RFID>
+        <Drivename>JT_RFID</Drivename>
+        <DriveFile>JT_RFID.dll</DriveFile>
+        <DriveVersion>66.1.1.1</DriveVersion>
+        <RelyFile>JT_RFID.xml</RelyFile>
+        <CLSID>949CB76A-DAAA-4973-8ED7-05A7AE7BDA53</CLSID>
+        <Reduction/>
+        <OpSystem/>
+        <HelpFile>JT_RFID.htm</HelpFile>
+        <SubLink/>
+        <UpdateInfo/>
+        <XmlVersion>V1.0</XmlVersion>
+        <JT_RFID>
+            <DeviceInfo>
+                <Company>JieTong</Company>
+                <name>JT_RFID</name>
+                <Devicetype>Intelligent Module</Devicetype>
+                <TransType>TCP-Client</TransType>
+                <PacketLenth>128</PacketLenth>
+                <LinkType>1</LinkType>
+                <Remarks/>
+                <Reserve>0</Reserve>
+                <Guide>31</Guide>
+                <Description>TCP</Description>
+                <CardName>COMxx</CardName>
+            </DeviceInfo>
+            <AddressInfo>
+                <AddressRuleName1>
+                    <AddressFormat>IP1 PORT1 DEVID</AddressFormat>
+                    <AddressScope>IP1:IPv4:0-255:;PORT1:%d:0-65535:;DEVID:%d:0-65535:;</AddressScope>
+                    <AddressSample/>
+                    <AddressDes/>
+                </AddressRuleName1>
+            </AddressInfo>
+            <RegisterInfo>
+                <JT>
+                    <ChannelScopeMin>0</ChannelScopeMin>
+                    <ChannelScopeMax>0</ChannelScopeMax>
+                    <DataType>256</DataType>
+                    <RW>R</RW>
+                    <Describe/>
+                    <RegisterRule1>
+                        <RegFormat>STRING1</RegFormat>
+                        <ChannelScope>STRING1:</ChannelScope>
+                        <DataTypeSP>256</DataTypeSP>
+                        <RWForRule>R</RWForRule>
+                        <DesForRule/>
+                    </RegisterRule1>
+                </JT>
+            </RegisterInfo>
+            <SpecialDes>
+                <connetDes/>
+                <registerDes/>
+                <otherDes/>
+            </SpecialDes>
+        </JT_RFID>
+    </JT_RFID>
+</JT_RFID.xml>

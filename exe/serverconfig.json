@@ -1,0 +1,25 @@
+{
+	"ProductTypeRule":{
+		"Rule":{
+			"KF3.6":1,
+			"KF4.0":2
+		},
+		"ProductType":1
+	},
+	"RestfulIP":"172.30.100.151:8686",
+    "WebPort":18000,
+    "AppRegesterInfo":{
+	"ClientID":"AE1145566F2CE54C",
+	"ClientSecret":"D1D72504758F1C713627BC2B7ECA4C3E",
+	"RedirectURL":"http://172.30.20.80:18000/main.html",
+	"Router":"/main.html"
+	},
+    "AuthType":1,
+    "OAuthServer":{
+	"ip":"172.30.20.80",
+	"port":"9000",
+	"main":"http://172.30.20.80:9000",
+	"OauthMode":0
+	},
+	"isHttp":true
+}

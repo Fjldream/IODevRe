@@ -1,0 +1,523 @@
+{
+	"commonPlatform": {
+		"rows": [{
+				"field": "Type",
+				"name": "类型",
+				"value": "1",
+				"group": "基本属性"
+			},
+			{
+				"field": "Provider",
+				"name": "提供商",
+				"value": "Wellintech",
+				"group": "基本属性",
+				"editor": "text"
+			},
+			{
+				"field": "Active",
+				"name": "激活",
+				"value": "否",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [{
+								"id": 1,
+								"text": "是"
+							},
+							{
+								"id": 0,
+								"text": "否"
+							}
+						],
+						"valueField": "text",
+						"height": 22,
+						"width": 40,
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "HostName",
+				"name": "IP",
+				"value": "127.0.0.1:1883",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,20]", "ipprotCheck"]
+					}
+				}
+			},
+			{
+				"field": "AccountName",
+				"name": "登录账号",
+				"value": "admin",
+				"group": "基本属性",
+				"editor": "text"
+			},
+			{
+				"field": "AccountPassword",
+				"name": "登录密码",
+				"value": "admin123",
+				"group": "基本属性",
+				"editor": {
+					"type": "passwordbox",
+					"options": {
+						"prompt": "Password",
+						"showEye": true
+					}
+				}
+			},
+			{
+				"field": "UserName",
+				"name": "连接用户名",
+				"value": "admin",
+				"group": "基本属性",
+				"editor": "text"
+			},
+			{
+				"field": "UserPassword",
+				"name": "连接密码",
+				"value": "admin123",
+				"group": "基本属性",
+				"editor": {
+					"type": "passwordbox",
+					"options": {
+						"prompt": "Password",
+						"showEye": true
+					}
+				}
+			},
+			{
+				"field": "ClientID",
+				"name": "客户端ID",
+				"value": "client1",
+				"group": "基本属性",
+				"editor": "text"
+			},
+			{
+				"field": "TopicID",
+				"name": "主题ID",
+				"value": "demo",
+				"group": "基本属性",
+				"editor": "text"
+			},
+			{
+				"field": "Qos",
+				"name": "传输质量",
+				"value": 0,
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [{
+								"id": "0",
+								"text": "0"
+							},
+							{
+								"id": "1",
+								"text": "1"
+							},
+							{
+								"id": "2",
+								"text": "2"
+							}
+						],
+						"valueField": "text",
+						"height": 22,
+						"width": 40,
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "HistoryDataPort",
+				"name": "历史数据端口",
+				"value": "5678",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,20]", "portNum"]
+					}
+				}
+			},
+			{
+				"field": "HistoryDataTimeout",
+				"name": "历史数据连接超时(s)",
+				"value": "100",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,20]", "errNUm"]
+					}
+				}
+			},
+			{
+				"field": "HeartPort",
+				"name": "心跳端口",
+				"value": "60021",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,20]", "portNum"]
+					}
+				}
+			},
+			{
+				"field": "LogServerPort",
+				"name": "日志服务端口",
+				"value": "12137",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,20]", "portNum"]
+					}
+				}
+			},
+			{
+				"field": "LicenseServerPort",
+				"name": "授权服务端口",
+				"value": "22137",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,20]", "portNum"]
+					}
+				}
+			},
+			{ "field": "CAFile", "name": "证书文件名称", "value": "", "group": "基本属性"},
+			{ "field": "PublicKeyFile", "name": "公钥文件名称", "value": "", "group": "基本属性" },
+			{ "field": "PrivateKeyFile", "name": "私钥文件名称", "value": "", "group": "基本属性" }
+		]
+	},
+	"MQTTInterface": {
+		"rows": [{
+				"field": "Type",
+				"name": "类型",
+				"value": "5",
+				"group": "基本属性"
+			},
+			{
+				"field": "ConnectMode",
+				"name": "连接模式",
+				"value": "匿名无加密",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [{
+								"id": "0",
+								"text": "匿名无加密"
+							},
+							{
+								"id": "1",
+								"text": "匿名加密"
+							},
+							{
+								"id": "2",
+								"text": "非匿名无加密"
+							},
+							{
+								"id": "3",
+								"text": "非匿名加密"
+							}
+						],
+						"valueField": "text",
+						"height": 22,
+						"width": 40,
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "BrokerAddr",
+				"name": "broker地址",
+				"value": "127.0.0.1:8883",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,20]", "ipprotCheck"]
+					}
+				}
+			},
+			{
+				"field": "KeepAlive",
+				"name": "心跳间隔(s)",
+				"value": "60",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,120]", "errNUm"]
+					}
+				}
+			},
+			{
+				"field": "ReConnect",
+				"name": "重连间隔(s)",
+				"value": "30",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,120]", "errNUm"]
+					}
+				}
+			},
+			{
+				"field": "Qos",
+				"name": "服务质量",
+				"value": "0",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [{
+								"id": "0",
+								"text": "0"
+							},
+							{
+								"id": "1",
+								"text": "1"
+							},
+							{
+								"id": "2",
+								"text": "2"
+							}
+						],
+						"valueField": "text",
+						"height": 22,
+						"width": 40,
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "Username",
+				"name": "用户名",
+				"value": "admin",
+				"group": "基本属性",
+				"editor": "text"
+			},
+			{
+				"field": "PassWord",
+				"name": "密码",
+				"value": "admin123",
+				"group": "基本属性",
+				"editor": {
+					"type": "passwordbox",
+					"options": {
+						"prompt": "Password",
+						"showEye": true
+					}
+				}
+			},
+			{
+				"field": "PUBEnable",
+				"name": "发布使能",
+				"value": "发布",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [{
+								"id": "0",
+								"text": "不发布"
+							},
+							{
+								"id": "1",
+								"text": "发布"
+							}
+						],
+						"valueField": "text",
+						"height": 22,
+						"width": 40,
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "PUBScanPeriod",
+				"name": "周期发布间隔(ms)",
+				"value": "1000",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,20]", "integer"]
+					}
+				}
+			},
+			{
+				"field": "MaxDataLeno",
+				"name": "数据帧最大字节数(byte)",
+				"value": "65535",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,20]", "portNum"]
+					}
+				}
+			},
+			{
+				"field": "UsernameOfW",
+				"name": "数据下设用户名",
+				"value": "admin",
+				"group": "基本属性",
+				"editor": "text"
+			},
+			{
+				"field": "PassWordOfW",
+				"name": "数据下设密码",
+				"value": "admin123",
+				"group": "基本属性",
+				"editor": {
+					"type": "passwordbox",
+					"options": {
+						"prompt": "Password",
+						"showEye": true
+					}
+				}
+			},
+			{
+				"field": "WriteTimeGap",
+				"name": "数据下设最大接受时间偏差(s)",
+				"value": "5",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": ["'length[0,20]", "errNUm"]
+					}
+				}
+			},
+			{ "field": "CACertificate", "name": "CA证书", "value": "", "group": "基本属性"},
+			{ "field": "ClientCert", "name": "客户端证书", "value": "", "group": "基本属性" },
+			{ "field": "ClientPrivateKey", "name": "客户端私钥", "value": "", "group": "基本属性" }
+		]
+	},
+	"Amazon": {
+		"rows": [{
+				"field": "Type",
+				"name": "类型",
+				"value": "2",
+				"group": "基本属性"
+			},
+			{
+				"field": "Provider",
+				"name": "提供商",
+				"value": "AWS",
+				"group": "基本属性",
+				"editor": "text"
+			},
+			{
+				"field": "Active",
+				"name": "激活",
+				"value": "是",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [{
+								"id": 1,
+								"text": "是"
+							},
+							{
+								"id": 0,
+								"text": "否"
+							}
+						],
+						"valueField": "text",
+						"height": 22,
+						"width": 40,
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "HostName",
+				"name": "转发地址",
+				"value": "a2ihlhhqt2w4a1-ats.iot.cn-northwest-1.amazonaws.com.cn",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true
+					}
+				}
+			},
+			{
+				"field": "TopicID",
+				"name": "物名称",
+				"value": "testiot",
+				"group": "基本属性",
+				"editor": "text"
+			},
+			{
+				"field": "Qos",
+				"name": "传输质量",
+				"value": 0,
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [{
+								"id": "0",
+								"text": "0"
+							},
+							{
+								"id": "1",
+								"text": "1"
+							},
+							{
+								"id": "2",
+								"text": "2"
+							}
+						],
+						"valueField": "text",
+						"height": 22,
+						"width": 40,
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{ "field": "CAFile", "name": "证书文件名称", "value": "", "group": "基本属性"},
+			{ "field": "PublicKeyFile", "name": "公钥文件名称", "value": "", "group": "基本属性" },
+			{ "field": "PrivateKeyFile", "name": "私钥文件名称", "value": "", "group": "基本属性" }
+		]
+	}
+}

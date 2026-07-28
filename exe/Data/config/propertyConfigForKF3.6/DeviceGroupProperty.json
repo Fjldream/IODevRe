@@ -1,0 +1,19 @@
+{
+	"total": 2,
+	"rows": [
+		{"name":"组名称","value":"设备组1","group":"基本属性","code":"GroupName","editor":{
+			"type":"validatebox",
+			"options":{
+				"required":true,
+				"validType":["numLetterCharacter"]
+			}
+		}},
+		{"name":"组描述","value":"描述","group":"基本属性","code":"Description","editor":{
+			"type":"validatebox",
+			"options":{
+				"required": false,
+				"validType":["LetterCharacter"]
+			}
+		}}
+	]
+}

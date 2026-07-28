@@ -1,0 +1,848 @@
+{
+	"commonPlatform": {
+		"rows": [
+			{
+				"field": "Provider",
+				"name": "提供商",
+				"value": "Wellintech",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "Active",
+				"name": "激活",
+				"value": "0",
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [
+							{
+								"id": 0,
+								"text": "否"
+							},
+							{
+								"id": 1,
+								"text": "是"
+							}
+						],
+						"valueField": "id",
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "HostName",
+				"name": "IP",
+				"value": "127.0.0.1:1883",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": [
+							"'length[0,20]",
+							"ipprotCheck"
+						]
+					}
+				}
+			},
+			{
+				"field": "AccountName",
+				"name": "登录账号",
+				"value": "admin",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "AccountPassword",
+				"name": "登录密码",
+				"value": "admin123",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "passwordbox",
+					"options": {
+						"prompt": "Password",
+						"showEye": true
+					}
+				}
+			},
+			{
+				"field": "UserName",
+				"name": "连接用户名",
+				"value": "admin",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "UserPassword",
+				"name": "连接密码",
+				"value": "admin123",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "passwordbox",
+					"options": {
+						"prompt": "Password",
+						"showEye": true
+					}
+				}
+			},
+			{
+				"field": "ClientID",
+				"name": "客户端ID",
+				"value": "client1",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "TopicID",
+				"name": "主题ID",
+				"value": "demo",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "Qos",
+				"name": "传输质量",
+				"value": 0,
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [
+							{
+								"id": 0,
+								"text": "0"
+							},
+							{
+								"id": 1,
+								"text": "1"
+							},
+							{
+								"id": 2,
+								"text": "2"
+							}
+						],
+						"valueField": "id",
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "CAFile",
+				"name": "证书文件名称",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性"
+			},
+			{
+				"field": "PublicKeyFile",
+				"name": "公钥文件名称",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性"
+			},
+			{
+				"field": "PrivateKeyFile",
+				"name": "私钥文件名称",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性"
+			}
+		]
+	},
+	"MQTTInterface": {
+		"rows": [
+			{
+				"field": "PUBEnable",
+				"name": "发布使能",
+				"value": 1,
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [
+							{
+								"id": "0",
+								"text": "不发布"
+							},
+							{
+								"id": "1",
+								"text": "发布"
+							},
+							{
+								"id": "2",
+								"text": "采集转发"
+							},
+							{
+								"id": "3",
+								"text": "周期转发"
+							}
+						],
+						"valueField": "id",
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "Provider",
+				"name": "提供商",
+				"value": "Wellintech",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "ConnectMode",
+				"name": "连接模式",
+				"value": "0",
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [
+							{
+								"id": "0",
+								"text": "匿名无加密"
+							},
+							{
+								"id": "1",
+								"text": "匿名加密"
+							},
+							{
+								"id": "2",
+								"text": "非匿名无加密"
+							},
+							{
+								"id": "3",
+								"text": "非匿名加密"
+							}
+						],
+						"valueField": "id",
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "BrokerAddr",
+				"name": "转发地址",
+				"value": "127.0.0.1:1883",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": [
+							"'length[0,20]",
+							"ipprotCheck"
+						]
+					}
+				}
+			},
+			{
+				"field": "BackupBrokerAddr",
+				"name": "冗余转发地址",
+				"value": "127.0.0.1:1883",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"'length[0,20]",
+							"ipprotCheck"
+						]
+					}
+				}
+			},
+			{
+				"field": "KeepAlive",
+				"name": "心跳间隔(s)",
+				"value": "60",
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": [
+							"'length[0,120]",
+							"errNUm"
+						]
+					}
+				}
+			},
+			{
+				"field": "ReConnect",
+				"name": "重连间隔(s)",
+				"value": "30",
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": [
+							"'length[0,120]",
+							"errNUm"
+						]
+					}
+				}
+			},
+			{
+				"field": "Qos",
+				"name": "服务质量",
+				"value": "0",
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [
+							{
+								"id": "0",
+								"text": "0"
+							},
+							{
+								"id": "1",
+								"text": "1"
+							},
+							{
+								"id": "2",
+								"text": "2"
+							}
+						],
+						"valueField": "id",
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "Username",
+				"name": "用户名",
+				"value": "admin",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "PassWord",
+				"name": "密码",
+				"value": "admin123",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "passwordbox",
+					"options": {
+						"prompt": "Password",
+						"showEye": true
+					}
+				}
+			},
+			{
+				"field": "UsernameOfW",
+				"name": "数据下设用户名",
+				"value": "admin",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "PassWordOfW",
+				"name": "数据下设密码",
+				"value": "admin123",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "passwordbox",
+					"options": {
+						"prompt": "Password",
+						"showEye": true
+					}
+				}
+			},
+			{
+				"field": "PUBScanPeriod",
+				"name": "周期发布间隔(ms)",
+				"value": "1000",
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": [
+							"'length[0,20]",
+							"integer"
+						]
+					}
+				}
+			},
+			{
+				"field": "MaxDataLeno",
+				"name": "数据帧最大字节数(byte)",
+				"value": "65535",
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": [
+							"'length[0,20]",
+							"portNum"
+						]
+					}
+				}
+			},
+			{
+				"field": "WriteTimeGap",
+				"name": "数据下设最大接受时间偏差(s)",
+				"value": 1,
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": [
+							"'length[0,20]",
+							"errNUm"
+						]
+					}
+				}
+			},
+						{
+				"field": "YaKongTopicEnable",
+				"name": "亚控主题使能",
+				"value": 1,
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [
+							{
+								"id": "0",
+								"text": "不启用"
+							},
+							{
+								"id": "1",
+								"text": "启用"
+							}
+						],
+						"valueField": "id",
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "CustomTopicEnable",
+				"name": "客制化主题使能",
+				"value": 1,
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [
+							{
+								"id": "0",
+								"text": "不启用"
+							},
+							{
+								"id": "1",
+								"text": "启用"
+							}
+						],
+						"valueField": "id",
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "SubscirbeCustomTopic",
+				"name": "客制化订阅主题",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性"
+			},
+			{
+				"field": "CACertificate",
+				"name": "CA证书",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性"
+			},
+			{
+				"field": "ClientCert",
+				"name": "客户端证书",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性"
+			},
+			{
+				"field": "ClientPrivateKey",
+				"name": "客户端私钥",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性"
+			}
+		]
+	},
+	"Amazon": {
+		"rows": [
+			{
+				"field": "Provider",
+				"name": "提供商",
+				"value": "AWS",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "Active",
+				"name": "激活",
+				"value": "0",
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [
+							{
+								"id": 1,
+								"text": "是"
+							},
+							{
+								"id": 0,
+								"text": "否"
+							}
+						],
+						"valueField": "id",
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "HostName",
+				"name": "转发地址",
+				"value": "a2ihlhhqt2w4a1-ats.iot.cn-northwest-1.amazonaws.com.cn",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType":[
+							"awsAddr"
+						]
+					}
+				}
+			},
+			{
+				"field": "TopicID",
+				"name": "物名称",
+				"value": "testiot",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": false,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "Qos",
+				"name": "传输质量",
+				"value": 0,
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [
+							{
+								"id": 0,
+								"text": "0"
+							},
+							{
+								"id": 1,
+								"text": "1"
+							},
+							{
+								"id": 2,
+								"text": "2"
+							}
+						],
+						"valueField": "id",
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "CAFile",
+				"name": "证书文件名称",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性"
+			},
+			{
+				"field": "PublicKeyFile",
+				"name": "公钥文件名称",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性"
+			},
+			{
+				"field": "PrivateKeyFile",
+				"name": "私钥文件名称",
+				"value": "",
+				"valueType": "string",
+				"group": "基本属性"
+			}
+		]
+	},
+	"DataCenter":{
+		"rows":[
+			{
+				"field":"Provider",
+				"name":"提供商",
+				"value":"Wellintech",
+				"valueType":"string",
+				"group":"基本属性",
+				"editor":{
+					"type":"validatebox",
+					"options":{
+						"required":false,
+						"validType":[
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field": "Active",
+				"name": "激活",
+				"value": "1",
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "combobox",
+					"options": {
+						"data": [
+							{
+								"id": 0,
+								"text": "否"
+							},
+							{
+								"id": 1,
+								"text": "是"
+							}
+						],
+						"valueField": "id",
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "HostName",
+				"name": "IP",
+				"value": "127.0.0.1:9005",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": [
+							"'length[0,20]",
+							"ipprotCheck"
+						]
+					}
+				}
+			},
+			{
+				"field": "TopicID",
+				"name": "主题ID",
+				"value": "demo",
+				"valueType": "string",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"disabled":true,
+						"required": false,
+						"validType": [
+							"length[1,128]",
+							"LetterCharacter"
+						]
+					}
+				}
+			},
+			{
+				"field":"Cache",
+				"name":"是否断线缓存",
+				"value":"1",
+				"valueType":"number",
+				"group":"基本属性",
+				"editor":{
+					"type": "combobox",
+					"options": {
+						"data": [
+							{
+								"id": 0,
+								"text": "否"
+							},
+							{
+								"id": 1,
+								"text": "是"
+							}
+						],
+						"valueField": "id",
+						"editable": false,
+						"textField": "text",
+						"panelHeight": "auto"
+					}
+				}
+			},
+			{
+				"field": "MaxVolume",
+				"name": "最大缓存容量(MB)",
+				"value": "1024",
+				"valueType": "number",
+				"group": "基本属性",
+				"editor": {
+					"type": "validatebox",
+					"options": {
+						"required": true,
+						"validType": [
+							"dataRange[100,10240]"
+						]
+					}
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,100 @@
+{"rows":[
+	{"field":"Active","name":"激活","value":"0","valueType":"number","group":"基本属性","editor":{
+									"type": "combobox",
+									"options": {
+										"data":
+										[
+											{"id":"1","text":"是"},
+											{"id":"0","text":"否"}
+										],
+										"valueField":"id", 
+										"editable":false,
+										"textField":"text",
+										"panelHeight":"auto"
+									}
+								}},
+	{"field":"DBName","name":"数据库名","value":"test","valueType":"string","group":"基本属性","editor":"text"},
+	{"field":"Description","name":"描述","value":"","valueType":"string","group":"基本属性","editor":"text"},
+	{"field":"Model","name":"存储模式","value":"insert","valueType":"string","group":"基本属性","editor":{
+									"type": "combobox",
+									"options": {
+										"data":
+										[
+											{"id":"insert","text":"insert"},
+											{"id":"updata","text":"updata"}
+										],
+										"valueField":"id", 
+										"editable":false,
+										"textField":"text",
+										"panelHeight":"auto"
+									}
+								}},
+	{"field":"HostName","name":"IP","value":"127.0.0.1","valueType":"string","group":"基本属性","editor":{
+										"type": "validatebox",
+										"options": {
+											"required":true,
+											"validType":["'length[0,20]","IPCheck"]
+										}
+									}},	
+	{"field":"Port","name":"端口号","value":"3306","valueType":"number","group":"基本属性","editor":{
+											"type": "validatebox",
+											"options": {
+												"required":true,
+												"validType":["'length[0,20]","portNum"]
+											}
+										}},
+	{"field":"UserName","name":"用户名","value":"admin","valueType":"string","group":"基本属性","editor":"text"},
+	{"field":"Password","name":"密码","value":"admin123","valueType":"string","group":"基本属性","editor":{
+									"type": "passwordbox",
+									"options": {
+										"prompt": "Password",
+										"showEye": true
+									}
+								}},
+	{"field":"StorageInterval","name":"存储间隔时间(ms)","value":"1000","valueType":"number","group":"基本属性","editor":{
+												"type": "validatebox",
+												"options": {
+													"required":true,
+													"validType":["dataRange[1000,3000]"]
+												}
+											}},	
+	{"field":"Cache","name":"是否缓存","value":"0","valueType":"number","group":"基本属性","editor":{
+									"type": "combobox",
+									"options": {
+										"data":
+										[
+											{"id":"1","text":"是"},
+											{"id":"0","text":"否"}
+										],
+										"valueField":"id", 
+										"editable":false,
+										"textField":"text",
+										"panelHeight":"auto"
+									}
+								}},
+	{"field":"CachePath","name":"缓存路径","value":"D:/mydata","valueType":"string","group":"基本属性","editor":"text"},
+	{"field":"CacheFileSize","name":"缓存大小(M)","value":"0","valueType":"number","group":"基本属性","editor":{
+											"type": "validatebox",
+											"options": {
+												"required":true,
+												"validType":["dataRange[0,1024]"]
+											}
+										}},
+	{"field":"TableStructrue","name":"表结构","value":"","valueType":"string","group":"基本属性","editor":""},
+	{"field":"TableNames","name":"表名称","value":"","valueType":"string","group":"基本属性","editor":""},
+	{"field":"TagGroupActive","name":"是否按变量组存储","value":"0","valueType":"number","group":"基本属性","editor":{
+										"type": "combobox",
+										"options": {
+											"data":
+											[
+												{"id":"1","text":"是"},
+												{"id":"0","text":"否"}
+											],
+											"valueField":"id", 
+											"editable":false,
+											"textField":"text",
+											"panelHeight":"auto"
+										}
+									}},
+	{"field":"TagGroup","name":"管理变量组","value":"","valueType":"string","group":"基本属性","editor":""}
+]}

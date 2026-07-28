@@ -1,0 +1,370 @@
+{
+	"DriverList": [
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "ModbusMaster",
+			"DependFile": "ModbusMaster.ini|ModbusMaster.pdb",
+			"LastDriverModifyTime": "4/22/2025 15:58:39",
+			"DeviceSeries": [
+				"ModbusRTU",
+				"ModbusASCII",
+				"ModbusTCP"
+			],
+			"DriverType": [
+				0,
+				0,
+				1
+			],
+			"DriverVersion": "61.3.12.30",
+			"CLSID": "87FFBFE5-0A9F-47A5-B544-076EEC5B4D39",
+			"DriverCompany": "Modicon",
+			"DriverDevelopmentVersion": 4,
+			"DriverID": 1
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "Melsec_Ethernet",
+			"DependFile": "Melsec_Ethernet.ini|Melsec_Ethernet.pdb",
+			"LastDriverModifyTime": "2/24/2025 15:1:15",
+			"DeviceSeries": [
+				"Q_SERIAL_ETHERNET_ASCII",
+				"Q_SERIAL_ETHERNET_BINARY"
+			],
+			"DriverType": [
+				1,
+				1
+			],
+			"DriverVersion": "66.1.1.1",
+			"CLSID": "815CBB6C-FD06-46F0-BAB2-D34CA301262B",
+			"DriverCompany": "Mitsubishi",
+			"DriverDevelopmentVersion": 3,
+			"DriverID": 2
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "JT_RFID",
+			"DependFile": "JT_RFID.pdb|NewKingConfigModule.dll|NewKingLinkModule.dll",
+			"LastDriverModifyTime": "12/4/2024 11:6:41",
+			"DeviceSeries": [
+				"JT_RFID"
+			],
+			"DriverType": [
+				"TCP"
+			],
+			"DriverVersion": "66.1.1.1",
+			"CLSID": "949CB76A-DAAA-4973-8ED7-05A7AE7BDA53",
+			"DriverCompany": "JieTong",
+			"DriverDevelopmentVersion": 3,
+			"DriverID": 3
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "S7_TCP",
+			"DependFile": "S7_TCP.pdb|kvS7200.ini",
+			"LastDriverModifyTime": "12/20/2024 16:42:44",
+			"DeviceSeries": [
+				"S7-200LBTCPRB",
+				"S7-300LBTCPRB",
+				"S7-400LBTCPRB"
+			],
+			"DriverType": [
+				1,
+				1,
+				1
+			],
+			"DriverVersion": "60.6.25.30",
+			"CLSID": "055B7A0E-2F73-4BA1-9916-AF1AFA73D9FA",
+			"DriverCompany": "西门子",
+			"DriverDevelopmentVersion": 4,
+			"DriverID": 4
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "ModbusMaster",
+			"DependFile": "ModbusMaster.ini|ModbusMaster.pdb",
+			"LastDriverModifyTime": "1/16/2025 9:34:40",
+			"DeviceSeries": [
+				"ModbusRTU",
+				"ModbusASCII",
+				"ModbusTCP"
+			],
+			"DriverType": [
+				0,
+				0,
+				1
+			],
+			"DriverVersion": "61.6.19.98",
+			"CLSID": "87FFBFE5-0A9F-47A5-B544-076EEC5B4D39",
+			"DriverCompany": "Modicon",
+			"DriverDevelopmentVersion": 4,
+			"DriverID": 5
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "ModbusTCP",
+			"DependFile": "ModbusTCP.ini|ModbusTCP.pdb",
+			"LastDriverModifyTime": "2/21/2025 17:43:9",
+			"DeviceSeries": [
+				"ModbusZC"
+			],
+			"DriverType": [
+				0
+			],
+			"DriverVersion": "60.9.13.30",
+			"CLSID": "A932DBFB-CE1C-4A18-BD07-5E74EBEB55BA",
+			"DriverCompany": "志诚油机",
+			"DriverDevelopmentVersion": 4,
+			"DriverID": 6
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "FX3u_16M_Ethernet",
+			"DependFile": "FX3u_16M_Ethernet.ini|FX3u_16M_Ethernet.pdb",
+			"LastDriverModifyTime": "2/24/2025 15:1:27",
+			"DeviceSeries": [
+				"FX3u_16M_Ethernet"
+			],
+			"DriverType": [
+				1
+			],
+			"DriverVersion": "66.1.1.1",
+			"CLSID": "28FBB60E-6186-43D7-B57F-5A152A539F46",
+			"DriverCompany": "三菱",
+			"DriverDevelopmentVersion": 3,
+			"DriverID": 7
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "ModbusMaster",
+			"DependFile": "ModbusMaster.ini|ModbusMaster.pdb",
+			"LastDriverModifyTime": "2/24/2025 15:18:25",
+			"DeviceSeries": [
+				"ModbusRTU",
+				"ModbusASCII",
+				"ModbusTCP"
+			],
+			"DriverType": [
+				0,
+				0,
+				1
+			],
+			"DriverVersion": "61.5.19.96",
+			"CLSID": "87FFBFE5-0A9F-47A5-B544-076EEC5B4D39",
+			"DriverCompany": "Modicon",
+			"DriverDevelopmentVersion": 4,
+			"DriverID": 8
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "ModbusMaster",
+			"DependFile": "ModbusMaster.ini|ModbusMaster.pdb",
+			"LastDriverModifyTime": "4/9/2025 13:38:17",
+			"DeviceSeries": [
+				"ModbusRTU",
+				"ModbusASCII",
+				"ModbusTCP"
+			],
+			"DriverType": [
+				0,
+				0,
+				1
+			],
+			"DriverVersion": "66.3.6.30",
+			"CLSID": "87FFBFE5-0A9F-47A5-B544-076EEC5B4D39",
+			"DriverCompany": "Modicon",
+			"DriverDevelopmentVersion": 4,
+			"DriverID": 9
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "S71200Tcp",
+			"DependFile": "S71200Tcp.pdb|S71200max.ini",
+			"LastDriverModifyTime": "4/18/2025 18:30:44",
+			"DeviceSeries": [
+				"S7-1200",
+				"S7-1500"
+			],
+			"DriverType": [
+				1,
+				1
+			],
+			"DriverVersion": "61.5.10.30",
+			"CLSID": "7E66CB01-35D4-423c-A0C5-6B420888EB8B",
+			"DriverCompany": "西门子",
+			"DriverDevelopmentVersion": 4,
+			"DriverID": 10
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "ModbusMaster",
+			"DependFile": "ModbusMaster.ini|ModbusMaster.pdb",
+			"LastDriverModifyTime": "6/12/2025 20:47:31",
+			"DeviceSeries": [
+				"ModbusRTU",
+				"ModbusASCII",
+				"ModbusTCP"
+			],
+			"DriverType": [
+				0,
+				0,
+				1
+			],
+			"DriverVersion": "61.3.12.31",
+			"CLSID": "87FFBFE5-0A9F-47A5-B544-076EEC5B4D39",
+			"DriverCompany": "Modicon",
+			"DriverDevelopmentVersion": 4,
+			"DriverID": 11
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "ModbusMaster",
+			"DependFile": "ModbusMaster.ini|ModbusMaster.pdb",
+			"LastDriverModifyTime": "6/12/2025 20:50:23",
+			"DeviceSeries": [
+				"ModbusRTU",
+				"ModbusASCII",
+				"ModbusTCP"
+			],
+			"DriverType": [
+				0,
+				0,
+				1
+			],
+			"DriverVersion": "61.3.12.32",
+			"CLSID": "87FFBFE5-0A9F-47A5-B544-076EEC5B4D39",
+			"DriverCompany": "Modicon",
+			"DriverDevelopmentVersion": 4,
+			"DriverID": 12
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "ModbusMaster",
+			"DependFile": "ModbusMaster.ini|ModbusMaster.pdb",
+			"LastDriverModifyTime": "6/20/2025 13:36:17",
+			"DeviceSeries": [
+				"ModbusJINGHUA",
+				"ModbusYUWEI",
+				"ModbusTCP"
+			],
+			"DriverType": [
+				1,
+				0,
+				1
+			],
+			"DriverVersion": "65.10.8.11",
+			"CLSID": "87FFBFE5-0A9F-47A5-B544-076EEC5B4D39",
+			"DriverCompany": "Modicon",
+			"DriverDevelopmentVersion": 4,
+			"DriverID": 13
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Windows",
+			"DriverDesc": "description",
+			"DriverCreator": "admin001",
+			"DriverName": "DamsMQTT",
+			"DependFile": "DamsMQTT.ini|NewKingConfigModule.dll|NewKingLinkModule.dll|libcrypto-1_1.dll|libssl-1_1.dll|paho-mqtt3cs.dll",
+			"LastDriverModifyTime": "6/26/2025 17:24:55",
+			"DeviceSeries": [
+				"DamsMQTT"
+			],
+			"DriverType": [
+				0
+			],
+			"DriverVersion": "66.1.1.1",
+			"CLSID": "7A1A0250-5413-43D1-87B3-A4BF8BC76193",
+			"DriverCompany": "长庆",
+			"DriverDevelopmentVersion": 3,
+			"DriverID": 14
+		},
+		{
+			"SysPlatform": "X86",
+			"PlatformType": "Linux",
+			"DriverDesc": "描述",
+			"DriverCreator": "admin001",
+			"DriverName": "ModbusTCP",
+			"DependFile": "ModbusTCP.ini",
+			"LastDriverModifyTime": "2025/10/23 14:52:56",
+			"DeviceSeries": [
+				"ModbusTCP"
+			],
+			"DriverType": [
+				1
+			],
+			"DriverVersion": "88.1.3.8",
+			"CLSID": "00000000-0000-0000-0001-000000000000",
+			"DriverCompany": "Modicon",
+			"DriverDevelopmentVersion": 4,
+			"DriverID": 15
+		}
+	],
+	"SysPlatformInfo": [
+		{
+			"SysPlatformID": 1,
+			"SysPlatform": "CentOS"
+		},
+		{
+			"SysPlatformID": 2,
+			"SysPlatform": "Ubuntu"
+		},
+		{
+			"SysPlatformID": 3,
+			"SysPlatform": "Arm"
+		},
+		{
+			"SysPlatformID": 4,
+			"SysPlatform": "Arm64"
+		},
+		{
+			"SysPlatformID": 5,
+			"SysPlatform": "Ia32"
+		},
+		{
+			"SysPlatformID": 6,
+			"SysPlatform": "Windows"
+		},
+		{
+			"SysPlatformID": 7,
+			"SysPlatform": "Mips"
+		}
+	]
+}

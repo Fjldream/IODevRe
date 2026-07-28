@@ -1,0 +1,50 @@
+{
+	"FileList": [
+		{
+			"FileName":"DataBaseConfig.json",
+			"FileMD5Code":""
+		},
+		{
+			"FileName":"DataTransInfo.json",
+			"FileMD5Code":""
+		},
+		{
+			"FileName":"DeviceGroupInfo.json",
+			"FileMD5Code":""
+		},
+		{
+			"FileName":"DeviceInfo.json",
+			"FileMD5Code":""
+		},
+		{
+			"FileName":"HighAvailabilityInfo.json",
+			"FileMD5Code":""
+		},
+		{
+			"FileName":"ProjectFileList.json",
+			"FileMD5Code":""
+		},
+		{
+			"FileName":"ProjectPorperty.json",
+			"FileMD5Code":""
+		},
+		{
+			"FileName":"VarGroupInfo.json",
+			"FileMD5Code":""
+		},
+		{
+			"FileName":"VarInfo.json",
+			"FileMD5Code":""
+		},
+		{
+			"FolderName": "Driver",
+			"FileList": [
+			]
+		},
+		{
+			"FolderName": "Cert",
+			"FileList": [
+				]
+		}
+	]
+}

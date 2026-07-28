@@ -1,0 +1,115 @@
+{
+    "DeviceName": [
+        {
+            "validator":"numLetterCharacter",
+            "secondParam":"param",
+            "message":"数字、字母、汉字与下划线之间的组合"
+        },
+        {
+            "validator":"length",
+            "secondParam":"param = [1,64]",
+            "message":"需要由1到64个字符组成"
+        }
+    ],
+    "Description": [
+        {
+            "validator":"numLetterCharacter",
+            "secondParam":"param",
+            "message":"数字、字母、汉字与下划线之间的组合"
+        },
+        {
+            "validator":"length",
+            "secondParam":"param = [1,128]",
+            "message":"需要由1到128个字符组成"
+        }
+    ],
+    "Active": [
+        {
+            "validator":"enumeration",
+            "secondParam":"param = [0,1]",
+            "message":"仅支持0,1"
+        }
+    ],
+    "Timeout": [
+        {
+            "validator":"dataRange",
+            "secondParam":"param = [0, 30000, 1]",
+            "message":"需要由0到30000之间的数字组成"
+        }
+    ],
+    "DeviceCollectTime": [
+        {
+            "validator":"dataRange",
+            "secondParam":"param = [100, 86400000, 1]",
+            "message":"需要由100到86400000之间的数字组成"
+        }
+    ],
+    "ReconnectInterval": [
+        {
+            "validator":"dataRange",
+            "secondParam":"param = [5000, 86400000, 0]",
+            "message":"需要由5000到86400000之间的数字组成"
+        }
+    ],
+    "MaxReconncetInterval": [
+        {
+            "validator":"dataRange",
+            "secondParam":"param= [5000, 604800000, 1]",
+            "message":"需要由5000到604800000之间的数字组成"
+        }
+    ],
+    "DevAddress": [],
+    "DriverName": [],
+    "LinkType": [
+        {
+            "validator":"enumeration",
+            "secondParam":"param",
+            "message":"仅支持0,1,2"
+        }
+    ],
+    "SerialName": [],
+    "SerialBaudRate": [
+        {
+            "validator":"enumeration",
+            "secondParam":"param",
+            "message":"仅支持1200, 2400, 4800, 9600, 19200, 28800, 38400, 76800, 115200"
+        }
+    ],
+    "SerialParity": [
+        {
+            "validator":"enumeration",
+            "secondParam":"param",
+            "message":"仅支持0, 1, 2, 3, 4"
+        }
+    ],
+    "SerialDataBits": [
+        {
+            "validator":"enumeration",
+            "secondParam":"param",
+            "message":"仅支持7, 8"
+        }
+    ],
+    "SerialStopBits": [
+        {
+            "validator":"enumeration",
+            "secondParam":"param",
+            "message":"仅支持1, 2"
+        }
+    ],
+    "FrequencyControlMode": [
+        {
+            "validator":"enumeration",
+            "secondParam":"param",
+            "message":"仅支持0, 1"
+        }
+    ],
+    "FrequencySwitchCondition": [],
+    "DeviceID": [],
+    "DeviceGroup": [],
+    "DevNumber": 1,
+    "DeviceProvider": [],
+    "SystemPlatform": [],
+    "Company": [],
+    "DriverSeries": [],
+    "CLSID": []
+}
