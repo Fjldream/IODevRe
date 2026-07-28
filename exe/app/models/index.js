@@ -7,4 +7,5 @@ module.exports = {
   DeviceGroup: require('./DeviceGroup'),
   Variable: require('./Variable'),
   VariableGroup: require('./VariableGroup'),
+  Driver: require('./Driver'),
 };
