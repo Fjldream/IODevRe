@@ -1,398 +1,235 @@
 /**
- * DeviceService - 设备管理业务逻辑层
+ * DeviceService — 设备管理业务逻辑层
  *
- * 负责设备组树和设备实体的 CRUD 操作，
- * 底层读写工程文件 DeviceInfo.json。
- * 所有路径基于 global.sdbPath。
+ * 读写工程目录下的 DeviceGroupInfo.json 和 DeviceInfo.json。
+ * 路径约定: ${projectDir}/project/DeviceGroupInfo.json、DeviceInfo.json
+ *
+ * @module app/services/DeviceService
  */
-
-const fs = require('fs');
+const fs   = require('fs');
 const path = require('path');
-const Device = require('../models/Device');
+const Device      = require('../models/Device');
 const DeviceGroup = require('../models/DeviceGroup');
-const AppError = require('../../i18n/AppError');
-const ErrorCodes = require('../../i18n/errorCodes');
+const AppError    = require('../../i18n/AppError');
+const ErrorCodes  = require('../../i18n/errorCodes');
 
 class DeviceService {
   /**
-   * @param {string} projectDir - 工程根目录路径（通常为 ${sdbPath}/${projectId}）
+   * @param {string} projectDir — 工程根目录
    */
   constructor(projectDir) {
     this.projectDir = projectDir;
   }
 
+  // ---------- 文件读写 ----------
+
+  _dgiPath() { return path.join(this.projectDir, 'project', 'DeviceGroupInfo.json'); }
+  _diPath()  { return path.join(this.projectDir, 'project', 'DeviceInfo.json'); }
+
+  _read(fpath, fallback) {
+    if (!fs.existsSync(fpath)) return fallback;
+    try { return JSON.parse(fs.readFileSync(fpath, 'utf8')); }
+    catch (e) { throw new AppError(ErrorCodes.FILE_READ_ERROR, e.message); }
+  }
+  _write(fpath, data) {
+    const d = path.dirname(fpath);
+    if (!fs.existsSync(d)) fs.mkdirSync(d, { recursive: true });
+    try { fs.writeFileSync(fpath, JSON.stringify(data, null, '\t'), 'utf8'); }
+    catch (e) { throw new AppError(ErrorCodes.FILE_WRITE_ERROR, e.message); }
+  }
+
+  _readGroups()  { return this._read(this._dgiPath(), { DeviceGroupList: [] }).DeviceGroupList; }
+  _readDevices() { return this._read(this._diPath(),  { DeviceList: [] }).DeviceList; }
+  _writeGroups(list)  { this._write(this._dgiPath(), { DeviceGroupList: list }); }
+  _writeDevices(list) { this._write(this._diPath(),  { DeviceList: list }); }
+
+  // ---------- 设备组 CRUD ----------
+
+  /** @returns {Array<Object>} 设备组列表 */
+  getDeviceGroupList() { return this._readGroups(); }
+
   /**
-   * 获取 DeviceInfo.json 的完整路径
-   * @returns {string}
+   * 构建设备组树视图（兼容旧 getProjectDeviceGroupTreeView）
+   * @returns {Array<Object>}
    */
-  _getDeviceInfoPath() {
-    return path.join(this.projectDir, 'project', 'DeviceInfo.json');
+  buildDeviceGroupTree() {
+    const groups = this._readGroups();
+    const devices = this._readDevices();
+    return groups.map(g => ({
+      ...g,
+      DeviceObjectList: (g.DeviceObjectList || []).map(ref => {
+        const d = devices.find(dd => dd.DeviceID === ref.DeviceID);
+        return d ? { ...ref, ...d } : ref;
+      }),
+    }));
   }
 
   /**
-   * 读取 DeviceInfo.json
-   * @returns {{ DeviceList: Array, DeviceGroupTree: Array }}
-   * @throws {AppError} 文件读取失败时抛出 FILE_READ_ERROR
+   * @param {Object} data — { DeviceGroupName, Description }
+   * @returns {Object}
    */
-  _readDeviceInfo() {
-    const filePath = this._getDeviceInfoPath();
-    if (!fs.existsSync(filePath)) {
-      return { DeviceList: [], DeviceGroupTree: [] };
-    }
-    try {
-      return JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    } catch (err) {
-      throw new AppError(ErrorCodes.FILE_READ_ERROR, `DeviceInfo.json: ${err.message}`);
-    }
-  }
-
-  /**
-   * 写入 DeviceInfo.json
-   * @param {Object} data - 要写入的数据
-   * @returns {boolean}
-   * @throws {AppError} 写入失败时抛出 FILE_WRITE_ERROR
-   */
-  _writeDeviceInfo(data) {
-    const filePath = this._getDeviceInfoPath();
-    const dir = path.dirname(filePath);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
-    try {
-      fs.writeFileSync(filePath, JSON.stringify(data, null, '\t'), 'utf8');
-      return true;
-    } catch (err) {
-      throw new AppError(ErrorCodes.FILE_WRITE_ERROR, `DeviceInfo.json: ${err.message}`);
-    }
-  }
-
-  // ==================== 设备组操作 ====================
-
-  /**
-   * 获取设备组树
-   * @returns {Array<Object>} 树形结构的设备组列表
-   */
-  getDeviceGroupTree() {
-    const deviceInfo = this._readDeviceInfo();
-    return deviceInfo.DeviceGroupTree || [];
-  }
-
-  /**
-   * 在设备组树中递归查找节点
-   * @param {Array<Object>} tree - 设备组树
-   * @param {string} groupId - 要查找的设备组 ID
-   * @returns {Object|null} 找到的节点或 null
-   */
-  _findGroupInTree(tree, groupId) {
-    for (const node of tree) {
-      if (node.DeviceGroupID === groupId) return node;
-      if (node.Children && node.Children.length > 0) {
-        const found = this._findGroupInTree(node.Children, groupId);
-        if (found) return found;
-      }
-    }
-    return null;
-  }
-
-  /**
-   * 在设备组树中按名称查找节点
-   * @param {Array<Object>} tree - 设备组树
-   * @param {string} name - 设备组名称
-   * @returns {Object|null}
-   */
-  _findGroupByName(tree, name) {
-    for (const node of tree) {
-      if (node.DeviceGroupName === name) return node;
-      if (node.Children && node.Children.length > 0) {
-        const found = this._findGroupByName(node.Children, name);
-        if (found) return found;
-      }
-    }
-    return null;
-  }
-
-  /**
-   * 递归查找节点及其父节点引用
-   * @param {Array<Object>} tree - 当前层级的节点数组
-   * @param {string} groupId - 目标节点 ID
-   * @returns {{ node: Object, parentArray: Array }|null}
-   */
-  _findNodeRef(tree, groupId) {
-    for (let i = 0; i < tree.length; i++) {
-      if (tree[i].DeviceGroupID === groupId) {
-        return { node: tree[i], parentArray: tree, index: i };
-      }
-      if (tree[i].Children && tree[i].Children.length > 0) {
-        const found = this._findNodeRef(tree[i].Children, groupId);
-        if (found) return found;
-      }
-    }
-    return null;
-  }
-
-  /**
-   * 创建设备组
-   * @param {Object} groupData - 设备组数据 { DeviceGroupName, ParentID, Description }
-   * @returns {Object} 新创建的设备组节点
-   * @throws {AppError} DEVICE_GROUP_NAME_EXISTS | DEVICE_GROUP_NOT_FOUND
-   */
-  createDeviceGroup(groupData) {
-    const validated = DeviceGroup.validate(groupData);
-    const deviceInfo = this._readDeviceInfo();
-    const tree = deviceInfo.DeviceGroupTree || [];
-
-    // 检查同级名称唯一性
-    if (this._findGroupByName(tree, validated.DeviceGroupName)) {
+  createDeviceGroup(data) {
+    const v = DeviceGroup.validate(data);
+    const groups = this._readGroups();
+    if (groups.some(g => g.DeviceGroupName === v.DeviceGroupName))
       throw new AppError(ErrorCodes.DEVICE_GROUP_NAME_EXISTS);
-    }
-
-    const newGroup = DeviceGroup.create(validated).toJSON();
-
-    if (validated.ParentID) {
-      const ref = this._findNodeRef(tree, validated.ParentID);
-      if (!ref) throw new AppError(ErrorCodes.DEVICE_GROUP_NOT_FOUND);
-      if (!ref.node.Children) ref.node.Children = [];
-      ref.node.Children.push(newGroup);
-    } else {
-      tree.push(newGroup);
-    }
-
-    deviceInfo.DeviceGroupTree = tree;
-    this._writeDeviceInfo(deviceInfo);
-    return newGroup;
+    const g = DeviceGroup.create(v).toJSON();
+    groups.push(g);
+    this._writeGroups(groups);
+    return g;
   }
 
   /**
-   * 编辑设备组
-   * @param {string} groupId - 设备组 ID
-   * @param {Object} groupData - 要更新的字段
-   * @returns {Object} 更新后的节点
-   * @throws {AppError} DEVICE_GROUP_NOT_FOUND
+   * @param {string} id
+   * @param {Object} data — { DeviceGroupName, Description }
+   * @returns {Object}
    */
-  editDeviceGroup(groupId, groupData) {
-    const deviceInfo = this._readDeviceInfo();
-    const tree = deviceInfo.DeviceGroupTree || [];
-    const ref = this._findNodeRef(tree, groupId);
-    if (!ref) throw new AppError(ErrorCodes.DEVICE_GROUP_NOT_FOUND);
-
-    Object.keys(groupData).forEach((key) => {
-      if (key !== 'DeviceGroupID') {
-        ref.node[key] = groupData[key];
-      }
-    });
-
-    deviceInfo.DeviceGroupTree = tree;
-    this._writeDeviceInfo(deviceInfo);
-    return ref.node;
+  editDeviceGroup(id, data) {
+    const groups = this._readGroups();
+    const idx = groups.findIndex(g => g.DeviceGroupID === id);
+    if (idx === -1) throw new AppError(ErrorCodes.DEVICE_GROUP_NOT_FOUND);
+    const g = DeviceGroup.fromJSON(groups[idx]);
+    g.update(data);
+    groups[idx] = g.toJSON();
+    this._writeGroups(groups);
+    return groups[idx];
   }
 
   /**
-   * 删除设备组（组下无设备时才允许删除）
-   * @param {string} groupId - 设备组 ID
+   * @param {string} id
    * @returns {boolean}
-   * @throws {AppError} DEVICE_HAS_VARIABLES - 组下有设备
    */
-  deleteDeviceGroup(groupId) {
-    const deviceInfo = this._readDeviceInfo();
-    let tree = deviceInfo.DeviceGroupTree || [];
-    const devices = deviceInfo.DeviceList || [];
-
-    // 检查是否有设备属于该组
-    const hasDevices = devices.some((d) => d.DeviceGroupID === groupId);
-    if (hasDevices) throw new AppError(ErrorCodes.DEVICE_HAS_VARIABLES);
-
-    // 递归删除
-    const removeFromTree = (nodes) =>
-      nodes.filter((node) => {
-        if (node.DeviceGroupID === groupId) return false;
-        if (node.Children) node.Children = removeFromTree(node.Children);
-        return true;
-      });
-
-    deviceInfo.DeviceGroupTree = removeFromTree(tree);
-    this._writeDeviceInfo(deviceInfo);
+  deleteDeviceGroup(id) {
+    const groups = this._readGroups();
+    const g = groups.find(gg => gg.DeviceGroupID === id);
+    if (!g) throw new AppError(ErrorCodes.DEVICE_GROUP_NOT_FOUND);
+    if ((g.DeviceObjectList || []).length > 0) throw new AppError(ErrorCodes.DEVICE_HAS_VARIABLES);
+    this._writeGroups(groups.filter(gg => gg.DeviceGroupID !== id));
     return true;
   }
 
-  // ==================== 设备操作 ====================
+  // ---------- 设备 CRUD ----------
+
+  /** @returns {Array<Object>} */
+  getDevices(groupName) {
+    const list = this._readDevices();
+    return groupName ? list.filter(d => d.DeviceGroup === groupName) : list;
+  }
 
   /**
-   * 获取设备列表
-   * @param {string|null} deviceGroupId - 可选，按设备组过滤
-   * @returns {Array<Object>} 设备数组
+   * @param {Object} data
+   * @returns {Object}
    */
-  getDevices(deviceGroupId = null) {
-    const deviceInfo = this._readDeviceInfo();
-    const devices = deviceInfo.DeviceList || [];
-    if (deviceGroupId) {
-      return devices.filter((d) => d.DeviceGroupID === deviceGroupId);
+  createDevice(data) {
+    const v = Device.validate(data);
+    const devices = this._readDevices();
+    if (devices.some(d => d.DeviceName === v.DeviceName && d.LinkName === (v.LinkName || '')))
+      throw new AppError(ErrorCodes.DEVICE_NAME_EXISTS);
+
+    const d = Device.create(v).toJSON();
+
+    // 自动关联到设备组
+    if (v.DeviceGroup) {
+      const groups = this._readGroups();
+      const g = groups.find(gg => gg.DeviceGroupName === v.DeviceGroup || gg.DeviceGroupID === v.DeviceGroup);
+      if (g) {
+        if (!g.DeviceObjectList) g.DeviceObjectList = [];
+        g.DeviceObjectList.push({ DeviceID: d.DeviceID, DeviceName: d.DeviceName });
+        this._writeGroups(groups);
+      }
     }
-    return devices;
+
+    devices.push(d);
+    this._writeDevices(devices);
+    return d;
   }
 
   /**
-   * 创建单个设备
-   * @param {Object} deviceData - 设备数据
-   * @returns {Object} 新设备
-   * @throws {AppError} DEVICE_NAME_EXISTS
+   * 批量创建（导入优化：单次落盘）
+   * @param {Array<Object>} list
+   * @returns {Array<Object>}
    */
-  createDevice(deviceData) {
-    const validated = Device.validate(deviceData);
-    const deviceInfo = this._readDeviceInfo();
-    const devices = deviceInfo.DeviceList || [];
-
-    // 检查名称 + 链路唯一性
-    const exists = devices.some(
-      (d) => d.DeviceName === validated.DeviceName && d.LinkName === (validated.LinkName || '')
-    );
-    if (exists) throw new AppError(ErrorCodes.DEVICE_NAME_EXISTS);
-
-    const newDevice = Device.create(validated).toJSON();
-    devices.push(newDevice);
-    deviceInfo.DeviceList = devices;
-    this._writeDeviceInfo(deviceInfo);
-    return newDevice;
-  }
-
-  /**
-   * 批量创建设备（导入优化：单次落盘）
-   * @param {Array<Object>} deviceDataList - 设备数据数组
-   * @returns {Array<Object>} 新增的设备数组
-   */
-  createDevicesBatch(deviceDataList) {
-    const deviceInfo = this._readDeviceInfo();
-    const devices = deviceInfo.DeviceList || [];
-    const nameSet = new Set(devices.map((d) => `${d.DeviceName}_${d.LinkName || ''}`));
-
-    const newDevices = [];
-    for (const data of deviceDataList) {
+  createDevicesBatch(list) {
+    const devices = this._readDevices();
+    const set = new Set(devices.map(dd => `${dd.DeviceName}_${dd.LinkName || ''}`));
+    const added = [];
+    for (const raw of list) {
       try {
-        const validated = Device.validate(data);
-        const key = `${validated.DeviceName}_${validated.LinkName || ''}`;
-        if (!nameSet.has(key)) {
-          const device = Device.create(validated).toJSON();
-          devices.push(device);
-          newDevices.push(device);
-          nameSet.add(key);
+        const v = Device.validate(raw);
+        const key = `${v.DeviceName}_${v.LinkName || ''}`;
+        if (!set.has(key)) {
+          const d = Device.create(v).toJSON();
+          devices.push(d); added.push(d); set.add(key);
         }
-      } catch (e) {
-        /* skip invalid entry */
-      }
+      } catch (_) { /* skip */ }
     }
-
-    deviceInfo.DeviceList = devices;
-    this._writeDeviceInfo(deviceInfo);
-    return newDevices;
+    this._writeDevices(devices);
+    return added;
   }
 
   /**
-   * 编辑设备
-   * @param {string} deviceId - 设备 ID
-   * @param {Object} deviceData - 要更新的字段
-   * @returns {Object} 更新后的设备
-   * @throws {AppError} DEVICE_NOT_FOUND
+   * @param {string} id
+   * @param {Object} data
+   * @returns {Object}
    */
-  editDevice(deviceId, deviceData) {
-    const deviceInfo = this._readDeviceInfo();
-    const devices = deviceInfo.DeviceList || [];
-    const index = devices.findIndex((d) => d.DeviceID === deviceId);
-    if (index === -1) throw new AppError(ErrorCodes.DEVICE_NOT_FOUND);
-
-    const device = Device.fromJSON(devices[index]);
-    device.update(deviceData);
-    devices[index] = device.toJSON();
-    deviceInfo.DeviceList = devices;
-    this._writeDeviceInfo(deviceInfo);
-    return devices[index];
+  editDevice(id, data) {
+    const devices = this._readDevices();
+    const idx = devices.findIndex(d => d.DeviceID === id);
+    if (idx === -1) throw new AppError(ErrorCodes.DEVICE_NOT_FOUND);
+    const d = Device.fromJSON(devices[idx]);
+    d.update(data);
+    devices[idx] = d.toJSON();
+    this._writeDevices(devices);
+    return devices[idx];
   }
 
   /**
-   * 删除设备（同时检查变量关联）
-   * @param {string[]} deviceIds - 要删除的设备 ID 数组
+   * @param {string[]} ids
    * @returns {boolean}
-   * @throws {AppError} DEVICE_NOT_FOUND | DEVICE_HAS_VARIABLES
    */
-  deleteDevices(deviceIds) {
-    const deviceInfo = this._readDeviceInfo();
-    let devices = deviceInfo.DeviceList || [];
-
-    // 检查变量关联
-    const varInfoPath = path.join(this.projectDir, 'project', 'VarInfo.json');
-    let varList = [];
-    if (fs.existsSync(varInfoPath)) {
-      try {
-        varList = JSON.parse(fs.readFileSync(varInfoPath, 'utf8')).TagList || [];
-      } catch (e) {
-        /* ignore */
-      }
-    }
-
-    for (const id of deviceIds) {
-      const device = devices.find((d) => d.DeviceID === id);
-      if (!device) throw new AppError(ErrorCodes.DEVICE_NOT_FOUND, `ID: ${id}`);
-      const hasVars = varList.some(
-        (v) => v.DeviceID === id || v.DeviceName === device.DeviceName
-      );
-      if (hasVars) throw new AppError(ErrorCodes.DEVICE_HAS_VARIABLES, `设备: ${device.DeviceName}`);
-    }
-
-    deviceInfo.DeviceList = devices.filter((d) => !deviceIds.includes(d.DeviceID));
-    this._writeDeviceInfo(deviceInfo);
+  deleteDevices(ids) {
+    let devices = this._readDevices();
+    for (const id of ids) if (!devices.find(d => d.DeviceID === id)) throw new AppError(ErrorCodes.DEVICE_NOT_FOUND, id);
+    // 同时从设备组中移除引用
+    const groups = this._readGroups();
+    for (const g of groups) g.DeviceObjectList = (g.DeviceObjectList || []).filter(r => !ids.includes(r.DeviceID));
+    this._writeGroups(groups);
+    this._writeDevices(devices.filter(d => !ids.includes(d.DeviceID)));
     return true;
   }
 
   /**
-   * 获取单个设备属性
-   * @param {string} deviceId - 设备 ID
-   * @returns {Object} 设备对象
-   * @throws {AppError} DEVICE_NOT_FOUND
+   * @param {string[]} ids
+   * @param {string} targetGroupName
+   * @returns {Array<Object>}
    */
-  getDeviceProperty(deviceId) {
-    const deviceInfo = this._readDeviceInfo();
-    const device = (deviceInfo.DeviceList || []).find((d) => d.DeviceID === deviceId);
-    if (!device) throw new AppError(ErrorCodes.DEVICE_NOT_FOUND);
-    return device;
-  }
+  moveDevices(ids, targetGroupName) {
+    const devices = this._readDevices();
+    const groups = this._readGroups();
+    const target = groups.find(g => g.DeviceGroupName === targetGroupName || g.DeviceGroupID === targetGroupName);
+    if (!target) throw new AppError(ErrorCodes.DEVICE_GROUP_NOT_FOUND, targetGroupName);
 
-  /**
-   * 批量移动设备到目标设备组
-   * @param {string[]} deviceIds - 设备 ID 数组
-   * @param {string} targetGroupId - 目标设备组 ID（空字符串表示移到根）
-   * @returns {Array<Object>} 移动后的设备数组
-   * @throws {AppError} DEVICE_NOT_FOUND | DEVICE_GROUP_NOT_FOUND
-   */
-  moveDevices(deviceIds, targetGroupId) {
-    const deviceInfo = this._readDeviceInfo();
-    const devices = deviceInfo.DeviceList || [];
-    const tree = deviceInfo.DeviceGroupTree || [];
-
-    if (targetGroupId) {
-      const groupExists = this._findGroupInTree(tree, targetGroupId);
-      if (!groupExists) throw new AppError(ErrorCodes.DEVICE_GROUP_NOT_FOUND);
+    for (const id of ids) {
+      const d = devices.find(dd => dd.DeviceID === id);
+      if (!d) throw new AppError(ErrorCodes.DEVICE_NOT_FOUND, id);
+      // 从旧组移除
+      for (const g of groups) g.DeviceObjectList = (g.DeviceObjectList || []).filter(r => r.DeviceID !== id);
+      // 加入新组
+      if (!target.DeviceObjectList) target.DeviceObjectList = [];
+      target.DeviceObjectList.push({ DeviceID: d.DeviceID, DeviceName: d.DeviceName });
+      d.DeviceGroup = targetGroupName;
     }
 
-    for (const id of deviceIds) {
-      const device = devices.find((d) => d.DeviceID === id);
-      if (!device) throw new AppError(ErrorCodes.DEVICE_NOT_FOUND, `ID: ${id}`);
-      device.DeviceGroupID = targetGroupId;
-    }
-
-    deviceInfo.DeviceList = devices;
-    this._writeDeviceInfo(deviceInfo);
-    return deviceIds.map((id) => devices.find((d) => d.DeviceID === id));
+    this._writeGroups(groups);
+    this._writeDevices(devices);
+    return ids.map(id => devices.find(d => d.DeviceID === id));
   }
 
-  /**
-   * 获取指定设备的寄存器列表
-   * @param {string} deviceName - 设备名称
-   * @returns {{ device: Object, registers: Array }}
-   */
-  getRegisters(deviceName) {
-    const deviceInfo = this._readDeviceInfo();
-    const device = (deviceInfo.DeviceList || []).find((d) => d.DeviceName === deviceName);
-    if (!device) throw new AppError(ErrorCodes.DEVICE_NOT_FOUND);
-    // 寄存器列表从驱动配置获取，此处返回设备引用
-    return { device, registers: [] };
+  /** @param {string} id @returns {Object} */
+  getDeviceProperty(id) {
+    const d = this._readDevices().find(dd => dd.DeviceID === id);
+    if (!d) throw new AppError(ErrorCodes.DEVICE_NOT_FOUND, id);
+    return d;
   }
 }
 

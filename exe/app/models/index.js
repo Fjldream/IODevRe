@@ -1,11 +1,1 @@
-/**
- * app/models 模块索引
- * 统一导出所有业务模型
- */
-module.exports = {
-  Device: require('./Device'),
-  DeviceGroup: require('./DeviceGroup'),
-  Variable: require('./Variable'),
-  VariableGroup: require('./VariableGroup'),
-  Driver: require('./Driver'),
-};
+module.exports = { Device: require('./Device'), DeviceGroup: require('./DeviceGroup') };
