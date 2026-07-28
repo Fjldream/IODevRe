@@ -34,6 +34,7 @@ const ErrorCodes = {
   VARIABLE_REG_INVALID:       { code: 2006, key: 'variableRegInvalid' },
   VARIABLE_TYPE_INVALID:      { code: 2007, key: 'variableTypeInvalid' },
   VARIABLE_DEVICE_NOT_FOUND:  { code: 2008, key: 'variableDeviceNotFound' },
+  VARIABLE_HAS_VARIABLES:     { code: 2009, key: 'variableGroupHasVariables' },
 
   // 驱动 (3000-3999)
   DRIVER_NOT_FOUND:           { code: 3000, key: 'driverNotFound' },
