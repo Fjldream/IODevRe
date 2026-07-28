@@ -1,6 +1,0 @@
-{
-	"uncontained":false,
-	"exposedPorts":["9900/udp","890/tcp"],
-	"osArch":"x64",
-	"osPlatform":"win32"
-}

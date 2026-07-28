@@ -54,9 +54,9 @@ initLogger();
 initLogDB();
 
 // ---- 加载旧版辅助模块（保留兼容性）----
-const pubInterClass = require('./Routes/PublicInterface');
+const pubInterClass = require('./utils/PublicInterface');
 global.publicInterface = new pubInterClass();
-const userManagers = require('./Routes/userManager');
+const userManagers = require('./utils/userManager');
 const KIOUserManagers = new userManagers();
 
 // ---- CORS 跨域 ----
@@ -87,7 +87,7 @@ if (global.exportPath) app.use(express.static(global.exportPath));
 if (global.importPath) app.use(express.static(global.importPath));
 
 // ---- 日志中间件 ----
-const LogManager = require('./Routes/LogInterface');
+const LogManager = require('./utils/LogInterface');
 new LogManager().useLogger(app);
 
 // ==================== 路由注册 ====================
