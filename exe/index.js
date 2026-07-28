@@ -105,40 +105,8 @@ global.logger && global.logger.log('info', 'app routes registered at /api/v1');
 app.use('/', require('./compat')());
 global.logger && global.logger.log('info', 'compat adapters registered');
 
-// 4. 旧版路由（过渡期保留，compat 逐渐替代）
-//    注意：旧路由使用 KIOUserManagers.checkOperationTokenIsValid 做 Token 校验
-app.use(
-  '/ProjectVar',
-  function (req, res, next) { KIOUserManagers.checkOperationTokenIsValid(req, res, next); },
-  require('./Routes/ProjectVarManage')
-);
-app.use(
-  '/Project',
-  function (req, res, next) { KIOUserManagers.checkOperationTokenIsValid(req, res, next); },
-  require('./Routes/ProjectManage')
-);
-app.use(
-  '/ProjectGroup',
-  function (req, res, next) { KIOUserManagers.checkOperationTokenIsValid(req, res, next); },
-  require('./Routes/ProjectGroupManage')
-);
-app.use(
-  '/ProjectDev',
-  function (req, res, next) { KIOUserManagers.checkOperationTokenIsValid(req, res, next); },
-  require('./Routes/ProjectDeviceManage')
-);
-app.use(
-  '/DriverManage',
-  function (req, res, next) { KIOUserManagers.checkOperationTokenIsValid(req, res, next); },
-  require('./Routes/DriverManager')
-);
-app.use(
-  '/Authority',
-  function (req, res, next) { KIOUserManagers.checkOperationTokenIsValid(req, res, next); },
-  require('./Routes/AuthorityManage')
-);
-app.use('/api/v1', require('./Routes/RestfulManage'));
-app.use('/api/v1', require('./Routes/KFRestfulManage'));
+// 4. 旧版路由已由 compat/ 层完全替代，不再注册旧 Routes。
+//    旧文件保留在 exe/Routes/ 下仅作参考，不影响运行。
 
 // 5. 总体组枚举变量清单（遗留，保持旧格式输出）
 let strCurProject = '';
